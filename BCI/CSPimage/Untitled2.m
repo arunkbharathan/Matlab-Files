@@ -1,0 +1,9 @@
+t=0.001:0.0001:1;
+x=sin(2*pi*500*t+pi)';
+y=sin(2*pi*500*t)';
+x=x(1:442);
+y=y(1:442);
+xx=repmat(x,1,304);
+yy=repmat(y,1,304);
+imshow(xx)
+imshow(yy)

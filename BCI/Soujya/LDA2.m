@@ -1,0 +1,11 @@
+function [FDV]=LDA2(C1feature,C2feature)
+Mu1=mean(C1feature)'
+Mu2=mean(C2feature)'
+S1=cov(C1feature)
+S2=cov(C2feature)
+Sw=S1+S2
+SB= (Mu1-Mu2)*(Mu1-Mu2)'
+invSw=inv(Sw)
+invSw_by_SB=invSw*SB
+[V,D]=eig(invSw_by_SB)
+FDV=V(:,1); 

@@ -1,0 +1,262 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      --><title>The Vigenere Square Encryption Algorithm</title><meta name="generator" content="MATLAB 7.10"><meta name="date" content="2009-12-04"><meta name="m-file" content="VigenereDetails"><style type="text/css">
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head><body><div class="content"><h1>The Vigenere Square Encryption Algorithm</h1><!--introduction--><p>This cipher produces encrypted <i>ciphertext</i> from an input <i>plaintext</i> message using a <i>key</i> and a matrix of <i>substitution alphabets</i>. Recovery of the plaintext from the ciphertext requires the key. By <a href="http://en.wikipedia.org/wiki/Advanced_Encryption_Standard">modern standards</a>, this isn't a terribly <a href="http://en.wikipedia.org/wiki/Information_theoretic_security">secure cryptosystem</a>, but it is easily implemented, and difficult enough that encrypted messages can't be casually deciphered.</p><p>The Vigenere cipher encrypts its inputs by using the key and the plaintext as indices into a fixed lookup table: the Vigenere square. For ease of computation, the algorithm first maps letters to numbers: A=1, B=2, ... SPACE=27. As shown in the matrix below, each row in the square is derived from the row above by circularly shifting it one place to the left:</p><pre>  1 2 3 4 5 ... 26 27
+  2 3 4 5 6 ... 27  1
+  3 4 5 6 7 ...  1  2
+ ...
+ 27 1 2 3 4 ... 25 26</pre><p>To encrypt, replicate the letters in the key so the key and plaintext are the same length. Then, derive each ciphertext letter by lookup in the Vigenere square: use the key letter as the row index and the plaintext letter as the column index. If the key <tt>K</tt> and the plaintext <tt>P</tt> are <tt>n</tt> letters long, form the ciphertext result <tt>C</tt> by indexing into the Vingere square <tt>V</tt>, as follows:</p><pre> C(n) = V(K(n), P(n))</pre><p>Decryption simply reverses the processs, using the key letter to determine the row index and the ciphertext letter to determine the colum index, which is the plaintext letter. For example:</p><pre> P(n) = FIND(V(K(n,:)) == C(n))</pre><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Implementing the Vigenere Cipher in MATLAB</a></li></ul></div><h2>Implementing the Vigenere Cipher in MATLAB<a name="1"></a></h2><p>To implement the Vigenere cipher in MATLAB, I wrote three functions:</p><div><ul><li><tt>vigenere</tt> - Generates the Vigenere square.</li><li><tt>encrypt</tt> - Transforms a plaintext message into ciphertext.</li><li><tt>decrypt</tt> - Recovers the plaintext message from the ciphertext.</li></ul></div><p>The <tt>vigenere</tt> function uses three additional MATLAB functions: <a href="http://www.mathworks.com/access/helpdesk/help/techdoc/ref/circshift.html"><tt>circshift</tt></a> - Creates each row of the Vigenere square. <a href="http://www.mathworks.com/access/helpdesk/help/techdoc/ref/arrayfun.html"><tt>arrayfun</tt></a> - Iterates over the row indices, calling <tt>circshift</tt> on each; returns a cell array of the rows. <a href="http://www.mathworks.com/access/helpdesk/help/techdoc/ref/reshape.html"><tt>reshape</tt></a> - Builds a matrix from the cell array.</p><pre class="codeinput"><span class="keyword">function</span> v = vigenere
+</pre><pre class="codeinput"><span class="comment">% VIGENERE Return a Vigenere square in a 27x27 matrix.</span>
+
+    <span class="comment">% Square 27 on a side</span>
+    count = 27;
+    <span class="comment">% Map letters to numbers, A=1, B=2, ... SPACE=27</span>
+    alpha = 1:count;
+    <span class="comment">% Create a matrix with 27 shifted substitution alphabets</span>
+    <span class="comment">%   1 2 3 4 5 ... 26 27</span>
+    <span class="comment">%   2 3 4 5 6 ... 27  1</span>
+    <span class="comment">%   3 4 5 6 7 ...  1  2</span>
+    <span class="comment">% etc.</span>
+    v = arrayfun(@(n) circshift(alpha, [0, -n]), 0:count-1, <span class="keyword">...</span>
+                 <span class="string">'UniformOutput'</span>, false);
+    v = reshape([v{:}], count, count);
+</pre><p><tt>encrypt</tt> creates a Vigenere square and transforms the key and plaintext from strings into vectors of numbers. It encrypts the plaintext and then translates the encrypted message from a vector of numbers into a character string. <tt>encrypt</tt> calls <tt>arrayfun</tt> to perform the encryption lookup instead of using a for-loop. <tt>arrayfun</tt> is faster and it won't ever get the length of the plaintext wrong, as a hand-written for-loop might.</p><pre class="codeinput"><span class="keyword">function</span> ciphertext = encrypt(plaintext, key)
+</pre><pre class="codeinput">    v = vigenere;
+
+    <span class="comment">% Squeeze out everything except letters and the space character</span>
+    exclude = regexp(plaintext, <span class="string">'[^a-zA-Z ]'</span>);
+    plaintext(exclude) = [];
+
+    <span class="comment">% Make the key and the plaintext lower case, and convert to</span>
+    <span class="comment">% numeric values.</span>
+    key = lower(key) - double(<span class="string">'a'</span>) + 1;
+    key(key &lt; 0) = 27;
+    plaintext = lower(plaintext) - double(<span class="string">'a'</span>) + 1;
+    plaintext(plaintext &lt; 0) = 27;
+
+    <span class="comment">% Replicate the key so that it is as long as the plaintext.</span>
+    keyIndex = mod(0:(numel(plaintext)-1), numel(key))+1;
+    k = key(keyIndex);
+
+    <span class="comment">% Encrypt: C(n) = V(k(n), plaintext(n))</span>
+    ciphertext = arrayfun(@(m,n) v(m,n), k, plaintext) - 1;
+    ciphertext(ciphertext == 26) = double(<span class="string">' '</span>) - double(<span class="string">'a'</span>);
+    ciphertext = upper(char(ciphertext + double(<span class="string">'a'</span>)));
+</pre><p><tt>decrypt</tt> reverses the encryption process by searching for the ciphertext letter in the key letter row. The column index of the ciphertext letter maps back (1=A, 2=B, ..., 27=SPACE) to the plaintext letter. Like <tt>encrypt</tt>, <tt>decrypt</tt> loops over the cipertext using <tt>arrayfun</tt> instead of a for-loop.</p><pre class="codeinput"><span class="keyword">function</span> plaintext = decrypt(ciphertext, key)
+</pre><pre class="codeinput">    v = vigenere;
+
+    <span class="comment">% Convert the key and the ciphertext to one-based numeric values;</span>
+    <span class="comment">% A=1, B=2, etc. SPACE=27</span>
+    key = lower(key) - double(<span class="string">'a'</span>) + 1;
+    key(key &lt; 0) = 27;
+    ciphertext = lower(ciphertext) - double(<span class="string">'a'</span>) + 1;
+    ciphertext(ciphertext &lt; 0) = 27;
+
+    <span class="comment">% Replicate the key so that it is as long as the ciphertext.</span>
+    keyIndex = mod(0:(numel(ciphertext)-1), numel(key))+1;
+    k = key(keyIndex);
+
+    <span class="comment">% Decrypt. Each letter of the key determines a row in the Vigenere</span>
+    <span class="comment">% square. In that row, find the column index of the corresponding</span>
+    <span class="comment">% ciphertext letter. Convert the index back to a letter to determine</span>
+    <span class="comment">% the decrypted character (1=A, 2=B, etc.).</span>
+    plaintext = arrayfun(@(m,n) find(v(m,:) == n), k, ciphertext) - 1;
+    plaintext(plaintext == 26) = double(<span class="string">' '</span>) - double(<span class="string">'a'</span>);
+    plaintext = upper(char(plaintext + double(<span class="string">'a'</span>)));
+</pre><p>Most of the complexity in both <tt>encrypt</tt> and <tt>decrypt</tt> stems from extending the algorithm to allow spaces in the plaintext and the key. Without spaces, reading decrypted messages is difficult and error-prone.</p><p class="footer"><br>
+      Published with MATLAB&reg; 7.10<br></p></div><!--
+##### SOURCE BEGIN #####
+%% The Vigenere Square Encryption Algorithm
+% This cipher produces encrypted _ciphertext_ from an input _plaintext_ 
+% message using a _key_ and a matrix of _substitution alphabets_. Recovery of
+% the plaintext from the ciphertext requires the key. By 
+% <http://en.wikipedia.org/wiki/Advanced_Encryption_Standard modern 
+% standards>, this isn't a terribly 
+% <http://en.wikipedia.org/wiki/Information_theoretic_security secure 
+% cryptosystem>, but it is easily implemented,
+% and difficult enough that encrypted messages can't be casually
+% deciphered.
+%
+% The Vigenere cipher encrypts its inputs by using the key and the
+% plaintext as indices into a fixed lookup table: the Vigenere square.
+% For ease of computation, the algorithm first maps letters to numbers: A=1,
+% B=2, ... SPACE=27. As shown in the matrix below, each row in the 
+% square is derived from the row above by circularly shifting it one 
+% place to the left:
+% 
+%    1 2 3 4 5 ... 26 27
+%    2 3 4 5 6 ... 27  1
+%    3 4 5 6 7 ...  1  2
+%   ...
+%   27 1 2 3 4 ... 25 26
+%
+% To encrypt, replicate the letters in the key so the key and plaintext are 
+% the same length. Then, derive each ciphertext letter by lookup in the 
+% Vigenere square: use the key letter as the row index and the plaintext letter
+% as the column index. If the key |K| and the plaintext |P| are |n| letters
+% long, form the ciphertext result |C| by indexing into the Vingere square
+% |V|, as follows:
+%
+%   C(n) = V(K(n), P(n))
+%
+% Decryption simply reverses the processs, using the key letter to determine 
+% the row index and the ciphertext letter to determine the colum index, which 
+% is the plaintext letter. For example:
+%
+%   P(n) = FIND(V(K(n,:)) == C(n))
+%% Implementing the Vigenere Cipher in MATLAB
+% To implement the Vigenere cipher in MATLAB, I wrote three functions: 
+%
+% * |vigenere| - Generates the Vigenere square.
+% * |encrypt| - Transforms a plaintext message into ciphertext.
+% * |decrypt| - Recovers the plaintext message from the ciphertext.
+%%
+% The |vigenere| function uses three additional MATLAB functions:
+% <http://www.mathworks.com/access/helpdesk/help/techdoc/ref/circshift.html
+% |circshift|> - Creates each row of the Vigenere square. 
+% <http://www.mathworks.com/access/helpdesk/help/techdoc/ref/arrayfun.html
+% |arrayfun|> - Iterates over the row indices, calling |circshift| on each; 
+% returns a cell array of the rows.
+% <http://www.mathworks.com/access/helpdesk/help/techdoc/ref/reshape.html
+% |reshape|> - Builds a matrix from the cell array.
+function v = vigenere
+% VIGENERE Return a Vigenere square in a 27x27 matrix. 
+    
+    % Square 27 on a side
+    count = 27;
+    % Map letters to numbers, A=1, B=2, ... SPACE=27
+    alpha = 1:count;
+    % Create a matrix with 27 shifted substitution alphabets
+    %   1 2 3 4 5 ... 26 27
+    %   2 3 4 5 6 ... 27  1
+    %   3 4 5 6 7 ...  1  2
+    % etc.
+    v = arrayfun(@(n) circshift(alpha, [0, -n]), 0:count-1, ...
+                 'UniformOutput', false);
+    v = reshape([v{:}], count, count);  
+%% 
+% |encrypt| creates a Vigenere square and transforms the key and plaintext  
+% from strings into vectors of numbers. It encrypts the plaintext and then 
+% translates the encrypted message from a vector of numbers into a character
+% string. |encrypt| calls |arrayfun| to perform the encryption 
+% lookup instead of using a for-loop. |arrayfun| is 
+% faster and it won't ever get the length of the plaintext wrong, as a 
+% hand-written for-loop might.
+function ciphertext = encrypt(plaintext, key)
+    v = vigenere;
+    
+    % Squeeze out everything except letters and the space character
+    exclude = regexp(plaintext, '[^a-zA-Z ]');
+    plaintext(exclude) = [];
+    
+    % Make the key and the plaintext lower case, and convert to 
+    % numeric values. 
+    key = lower(key) - double('a') + 1;
+    key(key < 0) = 27;
+    plaintext = lower(plaintext) - double('a') + 1;
+    plaintext(plaintext < 0) = 27;
+    
+    % Replicate the key so that it is as long as the plaintext. 
+    keyIndex = mod(0:(numel(plaintext)-1), numel(key))+1;
+    k = key(keyIndex);
+    
+    % Encrypt: C(n) = V(k(n), plaintext(n))
+    ciphertext = arrayfun(@(m,n) v(m,n), k, plaintext) - 1;
+    ciphertext(ciphertext == 26) = double(' ') - double('a');
+    ciphertext = upper(char(ciphertext + double('a')));
+   
+%%
+% |decrypt| reverses the encryption process by searching for the ciphertext
+% letter in the key letter row. The column index of the ciphertext letter maps
+% back (1=A, 2=B, ..., 27=SPACE) to the plaintext letter. Like |encrypt|,
+% |decrypt| loops over the cipertext using |arrayfun| instead of a for-loop.
+%
+function plaintext = decrypt(ciphertext, key)
+    v = vigenere;
+    
+    % Convert the key and the ciphertext to one-based numeric values;
+    % A=1, B=2, etc. SPACE=27
+    key = lower(key) - double('a') + 1;
+    key(key < 0) = 27;
+    ciphertext = lower(ciphertext) - double('a') + 1;
+    ciphertext(ciphertext < 0) = 27;
+
+    % Replicate the key so that it is as long as the ciphertext. 
+    keyIndex = mod(0:(numel(ciphertext)-1), numel(key))+1;
+    k = key(keyIndex);
+    
+    % Decrypt. Each letter of the key determines a row in the Vigenere
+    % square. In that row, find the column index of the corresponding
+    % ciphertext letter. Convert the index back to a letter to determine
+    % the decrypted character (1=A, 2=B, etc.).
+    plaintext = arrayfun(@(m,n) find(v(m,:) == n), k, ciphertext) - 1;
+    plaintext(plaintext == 26) = double(' ') - double('a');
+    plaintext = upper(char(plaintext + double('a')));
+%%
+% Most of the complexity in both |encrypt| and |decrypt| stems from extending
+% the algorithm to allow spaces in the plaintext and the key. Without 
+% spaces, reading decrypted messages is difficult and error-prone.
+
+##### SOURCE END #####
+--></body></html>

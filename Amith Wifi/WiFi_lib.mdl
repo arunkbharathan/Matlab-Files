@@ -1,0 +1,7335 @@
+Library {
+  Name			  "WiFi_lib"
+  Version		  5.0
+  SaveDefaultBlockParams  on
+  LibraryLinkDisplay	  "none"
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  on
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  off
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Thu Mar 28 22:21:15 2002"
+  Creator		  "stuartm"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "stuartm"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Aug 26 13:15:02 2002"
+  ModelVersionFormat	  "1.%<AutoIncrement:160>"
+  ConfigurationManager	  "None"
+  SimParamPage		  "Solver"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  SimulationMode	  "normal"
+  ConsistencyChecking	  "none"
+  ArrayBoundsChecking	  "none"
+  AlgebraicLoopMsg	  "warning"
+  BlockPriorityViolationMsg "warning"
+  MinStepSizeMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  DiscreteInheritContinuousMsg "warning"
+  MultiTaskRateTransMsg	  "error"
+  SingleTaskRateTransMsg  "none"
+  CheckForMatrixSingularity "none"
+  IntegerOverflowMsg	  "warning"
+  Int32ToFloatConvMsg	  "warning"
+  ParameterDowncastMsg	  "error"
+  ParameterOverflowMsg	  "error"
+  ParameterPrecisionLossMsg "warning"
+  UnderSpecifiedDataTypeMsg "none"
+  UnnecessaryDatatypeConvMsg "none"
+  VectorMatrixConversionMsg "none"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  SfunCompatibilityCheckMsg "none"
+  ProdHWDeviceType	  "Microprocessor"
+  ProdHWWordLengths	  "8,16,32,32"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  RTWRetainRTWFile	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  TLCAssertion		  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Abs
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      ComplexToMagnitudeAngle
+      Output		      "Magnitude and angle"
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      ShowAdditionalParam     off
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      DataType		      "auto"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      EnablePort
+      StatesWhenEnabling      "held"
+      ShowOutputPort	      off
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      FrameConversion
+      OutFrame		      "Frame-based"
+    }
+    Block {
+      BlockType		      From
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ShowAdditionalParam     off
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "sfix(16)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "2^0"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Goto
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      ShowAdditionalParam     off
+      LatchInput	      off
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Logic
+      Operator		      "AND"
+      Inputs		      "2"
+      ShowAdditionalParam     off
+      AllPortsSameDT	      on
+      OutDataTypeMode	      "Logical (see Advanced Sim. Parameters)"
+      LogicDataType	      "uint(8)"
+    }
+    Block {
+      BlockType		      Math
+      Operator		      "exp"
+      OutputSignalType	      "auto"
+    }
+    Block {
+      BlockType		      Merge
+      Inputs		      "2"
+      InitialOutput	      "[]"
+      AllowUnequalInputPortWidths off
+      InputPortOffsets	      "[]"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Probe
+      ProbeWidth	      on
+      ProbeSampleTime	      on
+      ProbeComplexSignal      on
+      ProbeSignalDimensions   off
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      ShowAdditionalParam     off
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      RealImagToComplex
+      Input		      "Real and imag"
+      ConstantPart	      "0"
+    }
+    Block {
+      BlockType		      Reference
+    }
+    Block {
+      BlockType		      RelationalOperator
+      Operator		      ">="
+      ShowAdditionalParam     off
+      InputSameDT	      on
+      LogicOutDataTypeMode    "Logical (see Advanced Sim. Parameters)"
+      LogicDataType	      "uint(8)"
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Selector
+      InputType		      "Vector"
+      ElementSrc	      "Internal"
+      Elements		      "1"
+      RowSrc		      "Internal"
+      Rows		      "1"
+      ColumnSrc		      "Internal"
+      Columns		      "1"
+      InputPortWidth	      "-1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      PortCounts	      "[]"
+      SFunctionModules	      "''"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      ShowAdditionalParam     off
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Trigonometry
+      Operator		      "sin"
+      OutputSignalType	      "auto"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "WiFi_lib"
+    Location		    [44, 74, 950, 643]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "11Mbps demod"
+      Ports		      [1, 1]
+      Position		      [155, 436, 250, 504]
+      TreatAsAtomicUnit	      off
+      MaskPromptString	      "Short Preamble"
+      MaskStyleString	      "checkbox"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "Short_preamble=@1;"
+      MaskInitialization      "if Short_preamble\n set_param([gcb '/PLCP demod"
+"'],'BlockChoice','PLCP demod for short preamble')\nelse\n  set_param([gcb '/P"
+"LCP demod'],'BlockChoice','PLCP demod for long preamble')\nend\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "off"
+      System {
+	Name			"11Mbps demod"
+	Location		[22, 141, 1004, 683]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Chips"
+	  Position		  [15, 268, 45, 282]
+	}
+	Block {
+	  BlockType		  Abs
+	  Name			  "Abs1"
+	  Position		  [270, 363, 290, 397]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column vector"
+	  Ports			  [1, 1]
+	  Position		  [425, 158, 450, 182]
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Column vector"
+	  OutputDimensions	  "[11,10]"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [460, 401, 480, 419]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant3"
+	  Position		  [260, 328, 380, 342]
+	  ShowName		  off
+	  Value			  "[0:64:(PSDU_size-1)*8]"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Convert from\n1:64 to 0:63"
+	  Ports			  [2, 1]
+	  Position		  [490, 370, 510, 390]
+	  NamePlacement		  "alternate"
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DQPSK\nDemodulator\nBaseband"
+	  Ports			  [1, 1]
+	  Position		  [585, 266, 660, 314]
+	  ShowName		  off
+	  SourceBlock		  "commdigbbndpm2/DQPSK\nDemodulator\nBaseband"
+	  SourceType		  "DQPSK Demodulator Baseband"
+	  OutType		  "Bit"
+	  Dec			  "Binary"
+	  Ph			  "0"
+	  numSamp		  "1"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 2]
+	  Position		  [85, 65, 90, 485]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "[PLCP_size_symbols*Spreading_rate PSDU_size"
+"]"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Despread with\nBarker code"
+	  Position		  [305, 154, 380, 186]
+	  Gain			  "[1; -1; 1; 1; -1; 1; 1; 1; -1; -1; -1 ]'"
+	  Multiplication	  "Matrix(K*u)"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Frame Status\nConversion1"
+	  Ports			  [1, 1]
+	  Position		  [710, 365, 735, 395]
+	  ShowName		  off
+	  SourceBlock		  "dspsigattribs/Frame Status\nConversion"
+	  SourceType		  "Frame Status Conversion"
+	  growRefPort		  off
+	  outframe		  "Frame-based"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Frame Status\nConversion3"
+	  Ports			  [1, 1]
+	  Position		  [360, 265, 385, 295]
+	  ShowName		  off
+	  SourceBlock		  "dspsigattribs/Frame Status\nConversion"
+	  SourceType		  "Frame Status Conversion"
+	  growRefPort		  off
+	  outframe		  "Frame-based"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain1"
+	  Position		  [480, 154, 555, 186]
+	  Gain			  "1/11"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Integer to binary"
+	  Ports			  [1, 1]
+	  Position		  [585, 349, 665, 411]
+	  TreatAsAtomicUnit	  off
+	  System {
+	    Name		    "Integer to binary"
+	    Location		    [291, 229, 832, 475]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [25, 33, 55, 47]
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Matrix\nConcatenation1"
+	      Ports		      [6, 1]
+	      Position		      [280, 25, 285, 180]
+	      ShowName		      off
+	      SourceBlock	      "simulink3/Signals\n& Systems/Matrix\nCo"
+"ncatenation"
+	      SourceType	      "Matrix Concatenation"
+	      numInports	      "6"
+	      catMethod		      "Vertical"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "bit 0"
+	      Ports		      [1, 1]
+	      Position		      [150, 32, 205, 48]
+	      ShowName		      off
+	      TreatAsAtomicUnit	      off
+	      Port {
+		PortNumber		1
+		Name			"bit 0"
+		PropagatedSignals	"bit 0"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	      System {
+		Name			"bit 0"
+		Location		[389, 415, 952, 643]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In"
+		  Position		  [25, 43, 55, 57]
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Bitwise\nLogical Operator"
+		  Ports			  [1, 1]
+		  Position		  [195, 32, 230, 68]
+		  ShowName		  off
+		  SourceBlock		  "simulink3/Math/Bitwise\nLogical Ope"
+"rator"
+		  SourceType		  "BitwiseOperator"
+		  Operator		  "AND"
+		  Operand2		  "1"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  Position		  [180, 97, 220, 123]
+		  ShowName		  off
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  DataTypeConversion
+		  Name			  "Data Type Conversion"
+		  Position		  [85, 36, 140, 64]
+		  ShowName		  off
+		  DataType		  "uint8"
+		}
+		Block {
+		  BlockType		  DataTypeConversion
+		  Name			  "Data Type Conversion1"
+		  Position		  [295, 36, 350, 64]
+		  ShowName		  off
+		  DataType		  "double"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  Position		  [390, 44, 405, 71]
+		  ShowName		  off
+		  Operator		  ">"
+		  Port {
+		    PortNumber		    1
+		    Name		    "bit 0"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		    DataLogging		    off
+		    DataLoggingNameMode	    "SignalName"
+		    DataLoggingDecimateData off
+		    DataLoggingDecimation   "2"
+		    DataLoggingLimitDataPoints off
+		    DataLoggingMaxPoints    "5000"
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out"
+		  Position		  [475, 48, 505, 62]
+		}
+		Line {
+		  Name			  "bit 0"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  Points		  [0, -5]
+		  DstBlock		  "Out"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Bitwise\nLogical Operator"
+		  SrcPort		  1
+		  DstBlock		  "Data Type Conversion1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  Points		  [150, 0; 0, -50]
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Data Type Conversion"
+		  SrcPort		  1
+		  DstBlock		  "Bitwise\nLogical Operator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In"
+		  SrcPort		  1
+		  DstBlock		  "Data Type Conversion"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Data Type Conversion1"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "bit 1"
+	      Ports		      [1, 1]
+	      Position		      [150, 57, 205, 73]
+	      ShowName		      off
+	      TreatAsAtomicUnit	      off
+	      Port {
+		PortNumber		1
+		Name			"bit 1"
+		PropagatedSignals	"bit 0"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	      System {
+		Name			"bit 1"
+		Location		[389, 415, 947, 612]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In"
+		  Position		  [25, 43, 55, 57]
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Bitwise\nLogical Operator"
+		  Ports			  [1, 1]
+		  Position		  [215, 32, 250, 68]
+		  ShowName		  off
+		  SourceBlock		  "simulink3/Math/Bitwise\nLogical Ope"
+"rator"
+		  SourceType		  "BitwiseOperator"
+		  Operator		  "AND"
+		  Operand2		  "2"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  Position		  [180, 97, 220, 123]
+		  ShowName		  off
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  DataTypeConversion
+		  Name			  "Data Type Conversion"
+		  Position		  [85, 36, 140, 64]
+		  ShowName		  off
+		  DataType		  "uint8"
+		}
+		Block {
+		  BlockType		  DataTypeConversion
+		  Name			  "Data Type Conversion1"
+		  Position		  [295, 36, 350, 64]
+		  ShowName		  off
+		  DataType		  "double"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  Position		  [390, 44, 405, 71]
+		  ShowName		  off
+		  Operator		  ">"
+		  Port {
+		    PortNumber		    1
+		    Name		    "bit 0"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		    DataLogging		    off
+		    DataLoggingNameMode	    "SignalName"
+		    DataLoggingDecimateData off
+		    DataLoggingDecimation   "2"
+		    DataLoggingLimitDataPoints off
+		    DataLoggingMaxPoints    "5000"
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out"
+		  Position		  [475, 48, 505, 62]
+		}
+		Line {
+		  SrcBlock		  "Data Type Conversion1"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In"
+		  SrcPort		  1
+		  DstBlock		  "Data Type Conversion"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Data Type Conversion"
+		  SrcPort		  1
+		  DstBlock		  "Bitwise\nLogical Operator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  Points		  [150, 0; 0, -50]
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Bitwise\nLogical Operator"
+		  SrcPort		  1
+		  DstBlock		  "Data Type Conversion1"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "bit 0"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  Points		  [0, -5]
+		  DstBlock		  "Out"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "bit 2"
+	      Ports		      [1, 1]
+	      Position		      [150, 82, 205, 98]
+	      ShowName		      off
+	      TreatAsAtomicUnit	      off
+	      Port {
+		PortNumber		1
+		Name			"bit 2"
+		PropagatedSignals	"bit 0"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	      System {
+		Name			"bit 2"
+		Location		[389, 416, 952, 643]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In"
+		  Position		  [25, 43, 55, 57]
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Bitwise\nLogical Operator"
+		  Ports			  [1, 1]
+		  Position		  [160, 32, 195, 68]
+		  ShowName		  off
+		  SourceBlock		  "simulink3/Math/Bitwise\nLogical Ope"
+"rator"
+		  SourceType		  "BitwiseOperator"
+		  Operator		  "AND"
+		  Operand2		  "4"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  Position		  [180, 97, 220, 123]
+		  ShowName		  off
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  DataTypeConversion
+		  Name			  "Data Type Conversion"
+		  Position		  [85, 36, 140, 64]
+		  ShowName		  off
+		  DataType		  "uint8"
+		}
+		Block {
+		  BlockType		  DataTypeConversion
+		  Name			  "Data Type Conversion1"
+		  Position		  [295, 36, 350, 64]
+		  ShowName		  off
+		  DataType		  "double"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  Position		  [390, 44, 405, 71]
+		  ShowName		  off
+		  Operator		  ">"
+		  Port {
+		    PortNumber		    1
+		    Name		    "bit 0"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		    DataLogging		    off
+		    DataLoggingNameMode	    "SignalName"
+		    DataLoggingDecimateData off
+		    DataLoggingDecimation   "2"
+		    DataLoggingLimitDataPoints off
+		    DataLoggingMaxPoints    "5000"
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out"
+		  Position		  [475, 48, 505, 62]
+		}
+		Line {
+		  Name			  "bit 0"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  Points		  [0, -5]
+		  DstBlock		  "Out"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Bitwise\nLogical Operator"
+		  SrcPort		  1
+		  DstBlock		  "Data Type Conversion1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  Points		  [150, 0; 0, -50]
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Data Type Conversion"
+		  SrcPort		  1
+		  DstBlock		  "Bitwise\nLogical Operator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In"
+		  SrcPort		  1
+		  DstBlock		  "Data Type Conversion"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Data Type Conversion1"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "bit 3"
+	      Ports		      [1, 1]
+	      Position		      [150, 107, 205, 123]
+	      ShowName		      off
+	      TreatAsAtomicUnit	      off
+	      Port {
+		PortNumber		1
+		Name			"bit 3"
+		PropagatedSignals	"bit 0"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	      System {
+		Name			"bit 3"
+		Location		[389, 415, 952, 643]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In"
+		  Position		  [25, 43, 55, 57]
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Bitwise\nLogical Operator"
+		  Ports			  [1, 1]
+		  Position		  [160, 32, 195, 68]
+		  ShowName		  off
+		  SourceBlock		  "simulink3/Math/Bitwise\nLogical Ope"
+"rator"
+		  SourceType		  "BitwiseOperator"
+		  Operator		  "AND"
+		  Operand2		  "8"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  Position		  [180, 97, 220, 123]
+		  ShowName		  off
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  DataTypeConversion
+		  Name			  "Data Type Conversion"
+		  Position		  [85, 36, 140, 64]
+		  ShowName		  off
+		  DataType		  "uint8"
+		}
+		Block {
+		  BlockType		  DataTypeConversion
+		  Name			  "Data Type Conversion1"
+		  Position		  [295, 36, 350, 64]
+		  ShowName		  off
+		  DataType		  "double"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  Position		  [390, 44, 405, 71]
+		  ShowName		  off
+		  Operator		  ">"
+		  Port {
+		    PortNumber		    1
+		    Name		    "bit 0"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		    DataLogging		    off
+		    DataLoggingNameMode	    "SignalName"
+		    DataLoggingDecimateData off
+		    DataLoggingDecimation   "2"
+		    DataLoggingLimitDataPoints off
+		    DataLoggingMaxPoints    "5000"
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out"
+		  Position		  [475, 48, 505, 62]
+		}
+		Line {
+		  SrcBlock		  "Data Type Conversion1"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In"
+		  SrcPort		  1
+		  DstBlock		  "Data Type Conversion"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Data Type Conversion"
+		  SrcPort		  1
+		  DstBlock		  "Bitwise\nLogical Operator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  Points		  [150, 0; 0, -50]
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Bitwise\nLogical Operator"
+		  SrcPort		  1
+		  DstBlock		  "Data Type Conversion1"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "bit 0"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  Points		  [0, -5]
+		  DstBlock		  "Out"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "bit 4"
+	      Ports		      [1, 1]
+	      Position		      [150, 132, 205, 148]
+	      ShowName		      off
+	      TreatAsAtomicUnit	      off
+	      Port {
+		PortNumber		1
+		Name			"bit 4"
+		PropagatedSignals	"bit 0"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	      System {
+		Name			"bit 4"
+		Location		[389, 415, 952, 643]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In"
+		  Position		  [25, 43, 55, 57]
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Bitwise\nLogical Operator"
+		  Ports			  [1, 1]
+		  Position		  [160, 32, 195, 68]
+		  ShowName		  off
+		  SourceBlock		  "simulink3/Math/Bitwise\nLogical Ope"
+"rator"
+		  SourceType		  "BitwiseOperator"
+		  Operator		  "AND"
+		  Operand2		  "16"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  Position		  [180, 97, 220, 123]
+		  ShowName		  off
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  DataTypeConversion
+		  Name			  "Data Type Conversion"
+		  Position		  [85, 36, 140, 64]
+		  ShowName		  off
+		  DataType		  "uint8"
+		}
+		Block {
+		  BlockType		  DataTypeConversion
+		  Name			  "Data Type Conversion1"
+		  Position		  [295, 36, 350, 64]
+		  ShowName		  off
+		  DataType		  "double"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  Position		  [390, 44, 405, 71]
+		  ShowName		  off
+		  Operator		  ">"
+		  Port {
+		    PortNumber		    1
+		    Name		    "bit 0"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		    DataLogging		    off
+		    DataLoggingNameMode	    "SignalName"
+		    DataLoggingDecimateData off
+		    DataLoggingDecimation   "2"
+		    DataLoggingLimitDataPoints off
+		    DataLoggingMaxPoints    "5000"
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out"
+		  Position		  [475, 48, 505, 62]
+		}
+		Line {
+		  Name			  "bit 0"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  Points		  [0, -5]
+		  DstBlock		  "Out"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Bitwise\nLogical Operator"
+		  SrcPort		  1
+		  DstBlock		  "Data Type Conversion1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  Points		  [150, 0; 0, -50]
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Data Type Conversion"
+		  SrcPort		  1
+		  DstBlock		  "Bitwise\nLogical Operator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In"
+		  SrcPort		  1
+		  DstBlock		  "Data Type Conversion"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Data Type Conversion1"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "bit 5"
+	      Ports		      [1, 1]
+	      Position		      [150, 157, 205, 173]
+	      ShowName		      off
+	      TreatAsAtomicUnit	      off
+	      Port {
+		PortNumber		1
+		Name			"bit 5"
+		PropagatedSignals	"bit 0"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	      System {
+		Name			"bit 5"
+		Location		[389, 415, 952, 643]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In"
+		  Position		  [25, 43, 55, 57]
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Bitwise\nLogical Operator"
+		  Ports			  [1, 1]
+		  Position		  [200, 32, 235, 68]
+		  ShowName		  off
+		  SourceBlock		  "simulink3/Math/Bitwise\nLogical Ope"
+"rator"
+		  SourceType		  "BitwiseOperator"
+		  Operator		  "AND"
+		  Operand2		  "32"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  Position		  [180, 97, 220, 123]
+		  ShowName		  off
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  DataTypeConversion
+		  Name			  "Data Type Conversion"
+		  Position		  [85, 36, 140, 64]
+		  ShowName		  off
+		  DataType		  "uint8"
+		}
+		Block {
+		  BlockType		  DataTypeConversion
+		  Name			  "Data Type Conversion1"
+		  Position		  [295, 36, 350, 64]
+		  ShowName		  off
+		  DataType		  "double"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  Position		  [390, 44, 405, 71]
+		  ShowName		  off
+		  Operator		  ">"
+		  Port {
+		    PortNumber		    1
+		    Name		    "bit 0"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		    DataLogging		    off
+		    DataLoggingNameMode	    "SignalName"
+		    DataLoggingDecimateData off
+		    DataLoggingDecimation   "2"
+		    DataLoggingLimitDataPoints off
+		    DataLoggingMaxPoints    "5000"
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out"
+		  Position		  [475, 53, 505, 67]
+		}
+		Line {
+		  SrcBlock		  "Data Type Conversion1"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In"
+		  SrcPort		  1
+		  DstBlock		  "Data Type Conversion"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Data Type Conversion"
+		  SrcPort		  1
+		  DstBlock		  "Bitwise\nLogical Operator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  Points		  [150, 0; 0, -50]
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Bitwise\nLogical Operator"
+		  SrcPort		  1
+		  DstBlock		  "Data Type Conversion1"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "bit 0"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  DstBlock		  "Out"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [440, 98, 470, 112]
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      Points		      [55, 0]
+	      Branch {
+		Points			[0, 25]
+		Branch {
+		  Points		  [0, 25]
+		  Branch {
+		    Points		    [0, 25]
+		    Branch {
+		    Points		    [0, 25]
+		    Branch {
+		    DstBlock		    "bit 4"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 25]
+		    DstBlock		    "bit 5"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "bit 3"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    DstBlock		    "bit 2"
+		    DstPort		    1
+		  }
+		}
+		Branch {
+		  DstBlock		  "bit 1"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		DstBlock		"bit 0"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      Name		      "bit 0"
+	      Labels		      [0, 0]
+	      SrcBlock		      "bit 0"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "bit 1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "bit 1"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "bit 2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "bit 2"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "bit 3"
+	      Labels		      [0, 0]
+	      SrcBlock		      "bit 3"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "bit 4"
+	      Labels		      [0, 0]
+	      SrcBlock		      "bit 4"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      5
+	    }
+	    Line {
+	      Name		      "bit 5"
+	      Labels		      [0, 0]
+	      SrcBlock		      "bit 5"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "Matrix\nConcatenation1"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Matrix\nConcatenation1"
+	  Ports			  [2, 1]
+	  Position		  [800, 245, 805, 425]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Matrix\nConcatena"
+"tion"
+	  SourceType		  "Matrix Concatenation"
+	  numInports		  "2"
+	  catMethod		  "Vertical"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Matrix\nConcatenation3"
+	  Ports			  [2, 1]
+	  Position		  [895, 89, 900, 416]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Matrix\nConcatena"
+"tion"
+	  SourceType		  "Matrix Concatenation"
+	  numInports		  "2"
+	  catMethod		  "Vertical"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "PLCP demod"
+	  Ports			  [1, 1]
+	  Position		  [585, 150, 680, 190]
+	  AttributesFormatString  "%<BlockChoice>"
+	  BlockChoice		  "PLCP demod for long preamble"
+	  TemplateBlock		  "WiFi_lib/PLCP demod"
+	  MemberBlocks		  "PLCP demod for long preamble,PLCP demod for"
+" short preamble"
+	  TreatAsAtomicUnit	  off
+	  Port {
+	    PortNumber		    1
+	    Name		    "PLCP"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  System {
+	    Name		    "PLCP demod"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In"
+	      Position		      [20, 40, 40, 60]
+	      ForegroundColor	      "yellow"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "PLCP demod\nfor long preamble"
+	      Ports		      [1, 1]
+	      Position		      [100, 40, 140, 80]
+	      SourceBlock	      "WiFi_lib/PLCP demod\nfor long preamble"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      on
+	      Permissions	      "ReadWrite"
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      SimViewingDevice	      off
+	      DataTypeOverride	      "UseLocalSettings"
+	      MinMaxOverflowLogging   "UseLocalSettings"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      Position		      [200, 40, 220, 60]
+	    }
+	    Line {
+	      SrcBlock		      "In"
+	      SrcPort		      1
+	      DstBlock		      "PLCP demod\nfor long preamble"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "PLCP demod\nfor long preamble"
+	      SrcPort		      1
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Pick Biggest"
+	  Ports			  [1, 1]
+	  Position		  [320, 360, 350, 400]
+	  SourceBlock		  "dspstat3/Maximum"
+	  SourceType		  "Maximum"
+	  fcn			  "Index"
+	  reset			  "None"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Pick symbol"
+	  Ports			  [2, 1]
+	  Position		  [480, 271, 545, 304]
+	  SourceBlock		  "dspindex/Variable\nSelector"
+	  SourceType		  "Variable Selector"
+	  rowsOrCols		  "Rows"
+	  IdxMode		  "Variable"
+	  Elements		  "[1 3]"
+	  ZerOneIdxMode		  "One-based"
+	  errmode		  "Clip Index"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reshape1"
+	  Ports			  [1, 1]
+	  Position		  [305, 268, 330, 292]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "1-D array"
+	  OutputDimensions	  "[Spreading_rate,PLCP_size_symbols]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reshape2"
+	  Ports			  [1, 1]
+	  Position		  [180, 158, 205, 182]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Customize"
+	  OutputDimensions	  "[Spreading_rate,PLCP_size_symbols]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reshape4"
+	  Ports			  [1, 1]
+	  Position		  [825, 323, 845, 347]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Column vector"
+	  OutputDimensions	  "[Spreading_rate,PLCP_size_symbols]"
+	  Port {
+	    PortNumber		    1
+	    Name		    "PSDU"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reshape5"
+	  Ports			  [1, 1]
+	  Position		  [710, 278, 735, 302]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Customize"
+	  OutputDimensions	  "[2,PSDU_size/8]"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1]
+	  Position		  [400, 325, 420, 345]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Transpose2"
+	  Ports			  [1, 1]
+	  Position		  [200, 361, 220, 399]
+	  ShowName		  off
+	  SourceBlock		  "dspmtrx3/Transpose"
+	  SourceType		  "Transpose"
+	  Hermitian		  off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Walsh"
+	  Ports			  [1, 1]
+	  Position		  [125, 348, 185, 412]
+	  TreatAsAtomicUnit	  off
+	  System {
+	    Name		    "Walsh"
+	    Location		    [213, 429, 899, 618]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In"
+	      Position		      [25, 38, 55, 52]
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "All 64, 11Mbps,\n 8 chip complex codes"
+	      Position		      [55, 91, 125, 119]
+	      Value		      "cck_codes_11"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Frame Status\nConversion1"
+	      Ports		      [1, 1]
+	      Position		      [190, 88, 205, 122]
+	      ShowName		      off
+	      SourceBlock	      "dspsigattribs/Frame Status\nConversion"
+	      SourceType	      "Frame Status Conversion"
+	      growRefPort	      "off"
+	      outframe		      "Frame-based"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Frame Status\nConversion2"
+	      Ports		      [1, 1]
+	      Position		      [230, 29, 280, 61]
+	      ShowName		      off
+	      SourceBlock	      "dspsigattribs/Frame Status\nConversion"
+	      SourceType	      "Frame Status Conversion"
+	      growRefPort	      "off"
+	      outframe		      "Frame-based"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain1"
+	      Position		      [505, 40, 530, 70]
+	      ShowName		      off
+	      Gain		      "1/8"
+	    }
+	    Block {
+	      BlockType		      Math
+	      Name		      "Math\nFunction2"
+	      Ports		      [1, 1]
+	      Position		      [240, 90, 270, 120]
+	      ShowName		      off
+	      Operator		      "conj"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Matrix Multiply"
+	      Ports		      [2, 1]
+	      Position		      [370, 36, 425, 74]
+	      SourceBlock	      "dspmtrx3/Matrix Multiply"
+	      SourceType	      "Matrix Multiply"
+	      numInputPorts	      "2"
+	      OptimizationLevel	      "None"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reshape1"
+	      Ports		      [1, 1]
+	      Position		      [90, 33, 115, 57]
+	      ShowName		      off
+	      SourceBlock	      "simulink3/Signals\n& Systems/Reshape"
+	      SourceType	      "Reshape"
+	      OutputDimensionality    "Customize"
+	      OutputDimensions	      "[8,PSDU_size/8 ]"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Transpose1"
+	      Ports		      [1, 1]
+	      Position		      [165, 26, 185, 64]
+	      ShowName		      off
+	      SourceBlock	      "dspmtrx3/Transpose"
+	      SourceType	      "Transpose"
+	      Hermitian		      "off"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      Position		      [595, 48, 625, 62]
+	    }
+	    Line {
+	      SrcBlock		      "All 64, 11Mbps,\n 8 chip complex codes"
+	      SrcPort		      1
+	      DstBlock		      "Frame Status\nConversion1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reshape1"
+	      SrcPort		      1
+	      DstBlock		      "Transpose1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Transpose1"
+	      SrcPort		      1
+	      DstBlock		      "Frame Status\nConversion2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Frame Status\nConversion2"
+	      SrcPort		      1
+	      DstBlock		      "Matrix Multiply"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Frame Status\nConversion1"
+	      SrcPort		      1
+	      DstBlock		      "Math\nFunction2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Math\nFunction2"
+	      SrcPort		      1
+	      Points		      [80, 0]
+	      DstBlock		      "Matrix Multiply"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "In"
+	      SrcPort		      1
+	      DstBlock		      "Reshape1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Matrix Multiply"
+	      SrcPort		      1
+	      DstBlock		      "Gain1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "PPDU"
+	  Position		  [935, 248, 965, 262]
+	}
+	Line {
+	  SrcBlock		  "Gain1"
+	  SrcPort		  1
+	  DstBlock		  "PLCP demod"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Despread with\nBarker code"
+	  SrcPort		  1
+	  DstBlock		  "Column vector"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Column vector"
+	  SrcPort		  1
+	  DstBlock		  "Gain1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "Reshape2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "Walsh"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Chips"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PLCP"
+	  Labels		  [1, 1]
+	  SrcBlock		  "PLCP demod"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation3"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PSDU"
+	  Labels		  [-1, 1]
+	  SrcBlock		  "Reshape4"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Matrix\nConcatenation3"
+	  SrcPort		  1
+	  DstBlock		  "PPDU"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Walsh"
+	  SrcPort		  1
+	  DstBlock		  "Transpose2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Transpose2"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  Branch {
+	    DstBlock		    "Abs1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -100]
+	    DstBlock		    "Reshape1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Abs1"
+	  SrcPort		  1
+	  DstBlock		  "Pick Biggest"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Pick Biggest"
+	  SrcPort		  1
+	  Points		  [55, 0]
+	  Branch {
+	    DstBlock		    "Convert from\n1:64 to 0:63"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Sum1"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  DstBlock		  "Convert from\n1:64 to 0:63"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Convert from\n1:64 to 0:63"
+	  SrcPort		  1
+	  DstBlock		  "Integer to binary"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Integer to binary"
+	  SrcPort		  1
+	  DstBlock		  "Frame Status\nConversion1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Pick symbol"
+	  SrcPort		  1
+	  DstBlock		  "DQPSK\nDemodulator\nBaseband"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reshape5"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reshape1"
+	  SrcPort		  1
+	  DstBlock		  "Frame Status\nConversion3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -40]
+	  DstBlock		  "Pick symbol"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant3"
+	  SrcPort		  1
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Frame Status\nConversion1"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Frame Status\nConversion3"
+	  SrcPort		  1
+	  DstBlock		  "Pick symbol"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Matrix\nConcatenation1"
+	  SrcPort		  1
+	  DstBlock		  "Reshape4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DQPSK\nDemodulator\nBaseband"
+	  SrcPort		  1
+	  DstBlock		  "Reshape5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reshape2"
+	  SrcPort		  1
+	  DstBlock		  "Despread with\nBarker code"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "CCK"
+	  Position		  [484, 463]
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "11Mbps mod"
+      Ports		      [1, 1]
+      Position		      [25, 436, 120, 504]
+      TreatAsAtomicUnit	      off
+      MaskPromptString	      "Short Preamble"
+      MaskStyleString	      "checkbox"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "Short_preamble=@1;"
+      MaskInitialization      "if Short_preamble\n set_param([gcb '/PLCP mod']"
+",'BlockChoice','PLCP mod for short preamble')\nelse\n  set_param([gcb '/PLCP "
+"mod'],'BlockChoice','PLCP mod for long preamble')\nend\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "off"
+      System {
+	Name			"11Mbps mod"
+	Location		[29, 155, 1004, 660]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "PPDU"
+	  Position		  [15, 218, 45, 232]
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector"
+	  Ports			  [1, 1]
+	  Position		  [680, 113, 705, 137]
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Column vector"
+	  OutputDimensions	  "[1,1]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector1"
+	  Ports			  [1, 1]
+	  Position		  [145, 313, 170, 337]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Customize"
+	  OutputDimensions	  "[8,PSDU_size/8]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector10"
+	  Ports			  [1, 1]
+	  Position		  [545, 288, 565, 312]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Row vector"
+	  OutputDimensions	  "[8,PSDU_size/8]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector2"
+	  Ports			  [1, 1]
+	  Position		  [290, 238, 315, 262]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Column vector"
+	  OutputDimensions	  "[8,PSDU_size/8]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector3"
+	  Ports			  [1, 1]
+	  Position		  [290, 288, 315, 312]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Column vector"
+	  OutputDimensions	  "[8,PSDU_size/8]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector4"
+	  Ports			  [1, 1]
+	  Position		  [290, 338, 315, 362]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Column vector"
+	  OutputDimensions	  "[8,PSDU_size/8]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector5"
+	  Ports			  [1, 1]
+	  Position		  [290, 388, 315, 412]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Column vector"
+	  OutputDimensions	  "[8,PSDU_size/8]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector6"
+	  Ports			  [1, 1]
+	  Position		  [820, 313, 835, 337]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Column vector"
+	  OutputDimensions	  "[8,PSDU_size/8]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector7"
+	  Ports			  [1, 1]
+	  Position		  [545, 238, 565, 262]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Row vector"
+	  OutputDimensions	  "[8,PSDU_size/8]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector8"
+	  Ports			  [1, 1]
+	  Position		  [545, 388, 565, 412]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Row vector"
+	  OutputDimensions	  "[8,PSDU_size/8]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector9"
+	  Ports			  [1, 1]
+	  Position		  [545, 338, 565, 362]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Row vector"
+	  OutputDimensions	  "[8,PSDU_size/8]"
+	}
+	Block {
+	  BlockType		  ComplexToMagnitudeAngle
+	  Name			  "Complex to\nMagnitude-Angle1"
+	  Ports			  [1, 1]
+	  Position		  [475, 335, 500, 365]
+	  ShowName		  off
+	  Output		  "Angle"
+	}
+	Block {
+	  BlockType		  ComplexToMagnitudeAngle
+	  Name			  "Complex to\nMagnitude-Angle2"
+	  Ports			  [1, 1]
+	  Position		  [475, 285, 500, 315]
+	  ShowName		  off
+	  Output		  "Angle"
+	}
+	Block {
+	  BlockType		  ComplexToMagnitudeAngle
+	  Name			  "Complex to\nMagnitude-Angle3"
+	  Ports			  [1, 1]
+	  Position		  [475, 385, 500, 415]
+	  ShowName		  off
+	  Output		  "Angle"
+	}
+	Block {
+	  BlockType		  ComplexToMagnitudeAngle
+	  Name			  "Complex to\nMagnitude-Angle4"
+	  Ports			  [1, 1]
+	  Position		  [475, 235, 500, 265]
+	  ShowName		  off
+	  Output		  "Angle"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DQPSK\nModulator\nBaseband"
+	  Ports			  [1, 1]
+	  Position		  [375, 233, 425, 267]
+	  ShowName		  off
+	  SourceBlock		  "commdigbbndpm2/DQPSK\nModulator\nBaseband"
+	  SourceType		  "DQPSK Modulator Baseband"
+	  InType		  "Bit"
+	  Enc			  "Binary"
+	  Ph			  "0"
+	  numSamp		  "1"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 2]
+	  Position		  [80, 26, 85, 424]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "[PLCP_size PSDU_size]"
+	  Port {
+	    PortNumber		    1
+	    Name		    "PLCP"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "PSDU"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Frame Status\nConversion"
+	  Ports			  [1, 1]
+	  Position		  [755, 106, 775, 144]
+	  ShowName		  off
+	  SourceBlock		  "dspsigattribs/Frame Status\nConversion"
+	  SourceType		  "Frame Status Conversion"
+	  growRefPort		  off
+	  outframe		  "Frame-based"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Matrix\nConcatenation1"
+	  Ports			  [8, 1]
+	  Position		  [760, 214, 765, 431]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Matrix\nConcatena"
+"tion"
+	  SourceType		  "Matrix Concatenation"
+	  numInports		  "8"
+	  catMethod		  "Vertical"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Matrix\nConcatenation4"
+	  Ports			  [2, 1]
+	  Position		  [890, 26, 895, 424]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Matrix\nConcatena"
+"tion"
+	  SourceType		  "Matrix Concatenation"
+	  numInports		  "2"
+	  catMethod		  "Vertical"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "PLCP mod"
+	  Ports			  [1, 1]
+	  Position		  [255, 105, 355, 145]
+	  AttributesFormatString  "%<BlockChoice>"
+	  BlockChoice		  "PLCP mod for long preamble"
+	  TemplateBlock		  "WiFi_lib/PLCP mod"
+	  MemberBlocks		  "PLCP mod for long preamble,PLCP mod for sho"
+"rt preamble"
+	  TreatAsAtomicUnit	  off
+	  System {
+	    Name		    "PLCP mod"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In"
+	      Position		      [20, 40, 40, 60]
+	      ForegroundColor	      "yellow"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "PLCP mod\nfor long preamble"
+	      Ports		      [1, 1]
+	      Position		      [100, 40, 140, 80]
+	      SourceBlock	      "WiFi_lib/PLCP mod\nfor long preamble"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      on
+	      Permissions	      "ReadWrite"
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      SimViewingDevice	      off
+	      DataTypeOverride	      "UseLocalSettings"
+	      MinMaxOverflowLogging   "UseLocalSettings"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      Position		      [200, 40, 220, 60]
+	    }
+	    Line {
+	      SrcBlock		      "In"
+	      SrcPort		      1
+	      DstBlock		      "PLCP mod\nfor long preamble"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "PLCP mod\nfor long preamble"
+	      SrcPort		      1
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "QPSK\nModulator\nBaseband1"
+	  Ports			  [1, 1]
+	  Position		  [370, 284, 425, 316]
+	  ShowName		  off
+	  SourceBlock		  "commdigbbndpm2/QPSK\nModulator\nBaseband"
+	  SourceType		  "QPSK Modulator Baseband"
+	  InType		  "Bit"
+	  Enc			  "Binary"
+	  Ph			  "0"
+	  numSamp		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "QPSK\nModulator\nBaseband2"
+	  Ports			  [1, 1]
+	  Position		  [370, 334, 425, 366]
+	  ShowName		  off
+	  SourceBlock		  "commdigbbndpm2/QPSK\nModulator\nBaseband"
+	  SourceType		  "QPSK Modulator Baseband"
+	  InType		  "Bit"
+	  Enc			  "Binary"
+	  Ph			  "0"
+	  numSamp		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "QPSK\nModulator\nBaseband3"
+	  Ports			  [1, 1]
+	  Position		  [370, 384, 425, 416]
+	  ShowName		  off
+	  SourceBlock		  "commdigbbndpm2/QPSK\nModulator\nBaseband"
+	  SourceType		  "QPSK Modulator Baseband"
+	  InType		  "Bit"
+	  Enc			  "Binary"
+	  Ph			  "0"
+	  numSamp		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Row\nvector"
+	  Ports			  [1, 1]
+	  Position		  [445, 113, 470, 137]
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Row vector"
+	  OutputDimensions	  "[1,1]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Select dibits"
+	  Ports			  [1, 4]
+	  Position		  [225, 224, 235, 426]
+	  SourceBlock		  "dspindex/Multiport\nSelector"
+	  SourceType		  "Multiport Selector"
+	  rowsOrCols		  "Rows"
+	  idxCellArray		  "{ [1 2], [3 4], [5 6], [ 7 8] }"
+	  idxErrMode		  "Generate Error"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Spread with\nBarker code"
+	  Position		  [535, 109, 610, 141]
+	  Gain			  "[1; -1; 1; 1; -1; 1; 1; 1; -1; -1; -1 ]"
+	  Multiplication	  "Matrix(K*u)"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "calculate chips"
+	  Ports			  [4, 8]
+	  Position		  [625, 225, 705, 420]
+	  TreatAsAtomicUnit	  off
+	  System {
+	    Name		    "calculate chips"
+	    Location		    [216, 127, 885, 700]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "phi1"
+	      Position		      [55, 53, 85, 67]
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "phi2"
+	      Position		      [55, 108, 85, 122]
+	      Port		      "2"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "phi3"
+	      Position		      [55, 188, 85, 202]
+	      Port		      "3"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "phi4"
+	      Position		      [55, 268, 85, 282]
+	      Port		      "4"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Complex\nExponential"
+	      Ports		      [1, 1]
+	      Position		      [410, 53, 455, 77]
+	      ShowName		      off
+	      SourceBlock	      "dspmathops/Complex\nExponential"
+	      SourceType	      "Complex Exponential"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Complex\nExponential1"
+	      Ports		      [1, 1]
+	      Position		      [410, 128, 455, 152]
+	      ShowName		      off
+	      SourceBlock	      "dspmathops/Complex\nExponential"
+	      SourceType	      "Complex Exponential"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Complex\nExponential2"
+	      Ports		      [1, 1]
+	      Position		      [415, 193, 460, 217]
+	      ShowName		      off
+	      SourceBlock	      "dspmathops/Complex\nExponential"
+	      SourceType	      "Complex Exponential"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Complex\nExponential3"
+	      Ports		      [1, 1]
+	      Position		      [415, 253, 460, 277]
+	      ShowName		      off
+	      SourceBlock	      "dspmathops/Complex\nExponential"
+	      SourceType	      "Complex Exponential"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Complex\nExponential4"
+	      Ports		      [1, 1]
+	      Position		      [415, 308, 460, 332]
+	      ShowName		      off
+	      SourceBlock	      "dspmathops/Complex\nExponential"
+	      SourceType	      "Complex Exponential"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Complex\nExponential5"
+	      Ports		      [1, 1]
+	      Position		      [415, 373, 460, 397]
+	      ShowName		      off
+	      SourceBlock	      "dspmathops/Complex\nExponential"
+	      SourceType	      "Complex Exponential"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Complex\nExponential6"
+	      Ports		      [1, 1]
+	      Position		      [415, 433, 460, 457]
+	      ShowName		      off
+	      SourceBlock	      "dspmathops/Complex\nExponential"
+	      SourceType	      "Complex Exponential"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Complex\nExponential7"
+	      Ports		      [1, 1]
+	      Position		      [415, 513, 460, 537]
+	      ShowName		      off
+	      SourceBlock	      "dspmathops/Complex\nExponential"
+	      SourceType	      "Complex Exponential"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      Position		      [230, 34, 270, 46]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi1"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [230, 49, 270, 61]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi2"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From10"
+	      Position		      [230, 299, 270, 311]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi1"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From11"
+	      Position		      [230, 315, 270, 325]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi3"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From12"
+	      Position		      [230, 329, 265, 341]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi2"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From13"
+	      Position		      [230, 249, 270, 261]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi1"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From14"
+	      Position		      [230, 369, 270, 381]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi1"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From15"
+	      Position		      [230, 264, 265, 276]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi4"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From16"
+	      Position		      [230, 384, 265, 396]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi3"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From17"
+	      Position		      [230, 429, 270, 441]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi1"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From18"
+	      Position		      [230, 444, 265, 456]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi2"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From19"
+	      Position		      [230, 519, 270, 531]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi1"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From2"
+	      Position		      [230, 65, 270, 75]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi3"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From3"
+	      Position		      [230, 79, 275, 91]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi4"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From4"
+	      Position		      [230, 114, 270, 126]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi1"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From5"
+	      Position		      [230, 184, 270, 196]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi1"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From6"
+	      Position		      [230, 135, 270, 145]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi3"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From7"
+	      Position		      [230, 154, 265, 166]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi4"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From8"
+	      Position		      [230, 200, 270, 210]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi2"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From9"
+	      Position		      [230, 214, 265, 226]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "phi4"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain1"
+	      Position		      [490, 433, 525, 457]
+	      ShowName		      off
+	      Gain		      "-1"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain3"
+	      Position		      [495, 250, 525, 280]
+	      ShowName		      off
+	      Gain		      "-1"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto"
+	      Position		      [115, 54, 150, 66]
+	      ShowName		      off
+	      GotoTag		      "phi1"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto1"
+	      Position		      [120, 109, 155, 121]
+	      ShowName		      off
+	      GotoTag		      "phi2"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto2"
+	      Position		      [115, 189, 150, 201]
+	      ShowName		      off
+	      GotoTag		      "phi3"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto3"
+	      Position		      [120, 269, 155, 281]
+	      ShowName		      off
+	      GotoTag		      "phi4"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [4, 1]
+	      Position		      [340, 36, 370, 89]
+	      ShowName		      off
+	      Inputs		      "++++"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      Ports		      [3, 1]
+	      Position		      [340, 113, 370, 167]
+	      ShowName		      off
+	      Inputs		      "+++"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum2"
+	      Ports		      [3, 1]
+	      Position		      [345, 184, 370, 226]
+	      ShowName		      off
+	      Inputs		      "+++"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum3"
+	      Ports		      [3, 1]
+	      Position		      [340, 297, 370, 343]
+	      ShowName		      off
+	      Inputs		      "+++"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum4"
+	      Ports		      [2, 1]
+	      Position		      [345, 248, 365, 277]
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum5"
+	      Ports		      [2, 1]
+	      Position		      [340, 368, 360, 397]
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum6"
+	      Ports		      [2, 1]
+	      Position		      [340, 428, 360, 457]
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "chip0"
+	      Position		      [560, 58, 590, 72]
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "chip1"
+	      Position		      [560, 133, 590, 147]
+	      Port		      "2"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "chip2"
+	      Position		      [560, 198, 590, 212]
+	      Port		      "3"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "chip3"
+	      Position		      [560, 258, 590, 272]
+	      Port		      "4"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "chip4"
+	      Position		      [565, 313, 595, 327]
+	      Port		      "5"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "chip5"
+	      Position		      [565, 378, 595, 392]
+	      Port		      "6"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "chip6"
+	      Position		      [565, 438, 595, 452]
+	      Port		      "7"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "chip7"
+	      Position		      [565, 518, 595, 532]
+	      Port		      "8"
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Complex\nExponential"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Complex\nExponential"
+	      SrcPort		      1
+	      DstBlock		      "chip0"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Complex\nExponential1"
+	      SrcPort		      1
+	      DstBlock		      "chip1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Complex\nExponential2"
+	      SrcPort		      1
+	      DstBlock		      "chip2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Complex\nExponential3"
+	      SrcPort		      1
+	      DstBlock		      "Gain3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Complex\nExponential4"
+	      SrcPort		      1
+	      DstBlock		      "chip4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Complex\nExponential5"
+	      SrcPort		      1
+	      DstBlock		      "chip5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Complex\nExponential6"
+	      SrcPort		      1
+	      DstBlock		      "Gain1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Complex\nExponential7"
+	      SrcPort		      1
+	      DstBlock		      "chip7"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "phi4"
+	      SrcPort		      1
+	      DstBlock		      "Goto3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "phi3"
+	      SrcPort		      1
+	      DstBlock		      "Goto2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "phi2"
+	      SrcPort		      1
+	      DstBlock		      "Goto1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "phi1"
+	      SrcPort		      1
+	      DstBlock		      "Goto"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From2"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From3"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "From4"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From6"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From7"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      DstBlock		      "Complex\nExponential1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From5"
+	      SrcPort		      1
+	      DstBlock		      "Sum2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From8"
+	      SrcPort		      1
+	      DstBlock		      "Sum2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From9"
+	      SrcPort		      1
+	      DstBlock		      "Sum2"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Sum2"
+	      SrcPort		      1
+	      DstBlock		      "Complex\nExponential2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From10"
+	      SrcPort		      1
+	      DstBlock		      "Sum3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From11"
+	      SrcPort		      1
+	      DstBlock		      "Sum3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From12"
+	      SrcPort		      1
+	      DstBlock		      "Sum3"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Sum3"
+	      SrcPort		      1
+	      DstBlock		      "Complex\nExponential4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From13"
+	      SrcPort		      1
+	      DstBlock		      "Sum4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From15"
+	      SrcPort		      1
+	      DstBlock		      "Sum4"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum4"
+	      SrcPort		      1
+	      DstBlock		      "Complex\nExponential3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From14"
+	      SrcPort		      1
+	      DstBlock		      "Sum5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From16"
+	      SrcPort		      1
+	      DstBlock		      "Sum5"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum5"
+	      SrcPort		      1
+	      DstBlock		      "Complex\nExponential5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From17"
+	      SrcPort		      1
+	      DstBlock		      "Sum6"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From18"
+	      SrcPort		      1
+	      DstBlock		      "Sum6"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum6"
+	      SrcPort		      1
+	      DstBlock		      "Complex\nExponential6"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From19"
+	      SrcPort		      1
+	      DstBlock		      "Complex\nExponential7"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain3"
+	      SrcPort		      1
+	      DstBlock		      "chip3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      DstBlock		      "chip6"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Chips"
+	  Position		  [920, 218, 950, 232]
+	}
+	Line {
+	  SrcBlock		  "Column\nvector6"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "PLCP mod"
+	  SrcPort		  1
+	  DstBlock		  "Row\nvector"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Spread with\nBarker code"
+	  SrcPort		  1
+	  DstBlock		  "Column\nvector"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Column\nvector"
+	  SrcPort		  1
+	  DstBlock		  "Frame Status\nConversion"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Frame Status\nConversion"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Matrix\nConcatenation4"
+	  SrcPort		  1
+	  DstBlock		  "Chips"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "PPDU"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PLCP"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "PLCP mod"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PSDU"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "Column\nvector1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Column\nvector1"
+	  SrcPort		  1
+	  DstBlock		  "Select dibits"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Select dibits"
+	  SrcPort		  1
+	  DstBlock		  "Column\nvector2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Select dibits"
+	  SrcPort		  2
+	  DstBlock		  "Column\nvector3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Select dibits"
+	  SrcPort		  3
+	  DstBlock		  "Column\nvector4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Select dibits"
+	  SrcPort		  4
+	  DstBlock		  "Column\nvector5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Column\nvector2"
+	  SrcPort		  1
+	  DstBlock		  "DQPSK\nModulator\nBaseband"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Column\nvector3"
+	  SrcPort		  1
+	  DstBlock		  "QPSK\nModulator\nBaseband1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Column\nvector4"
+	  SrcPort		  1
+	  DstBlock		  "QPSK\nModulator\nBaseband2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Column\nvector5"
+	  SrcPort		  1
+	  DstBlock		  "QPSK\nModulator\nBaseband3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DQPSK\nModulator\nBaseband"
+	  SrcPort		  1
+	  DstBlock		  "Complex to\nMagnitude-Angle4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "QPSK\nModulator\nBaseband1"
+	  SrcPort		  1
+	  DstBlock		  "Complex to\nMagnitude-Angle2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "QPSK\nModulator\nBaseband2"
+	  SrcPort		  1
+	  DstBlock		  "Complex to\nMagnitude-Angle1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "QPSK\nModulator\nBaseband3"
+	  SrcPort		  1
+	  DstBlock		  "Complex to\nMagnitude-Angle3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nMagnitude-Angle4"
+	  SrcPort		  1
+	  DstBlock		  "Column\nvector7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nMagnitude-Angle2"
+	  SrcPort		  1
+	  DstBlock		  "Column\nvector10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nMagnitude-Angle1"
+	  SrcPort		  1
+	  DstBlock		  "Column\nvector9"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nMagnitude-Angle3"
+	  SrcPort		  1
+	  DstBlock		  "Column\nvector8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "calculate chips"
+	  SrcPort		  2
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "calculate chips"
+	  SrcPort		  3
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "calculate chips"
+	  SrcPort		  4
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "calculate chips"
+	  SrcPort		  5
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "calculate chips"
+	  SrcPort		  6
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "calculate chips"
+	  SrcPort		  7
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "calculate chips"
+	  SrcPort		  8
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "Matrix\nConcatenation1"
+	  SrcPort		  1
+	  DstBlock		  "Column\nvector6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Column\nvector8"
+	  SrcPort		  1
+	  DstBlock		  "calculate chips"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Column\nvector9"
+	  SrcPort		  1
+	  DstBlock		  "calculate chips"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Column\nvector10"
+	  SrcPort		  1
+	  DstBlock		  "calculate chips"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Column\nvector7"
+	  SrcPort		  1
+	  DstBlock		  "calculate chips"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "calculate chips"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Row\nvector"
+	  SrcPort		  1
+	  DstBlock		  "Spread with\nBarker code"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "CCK"
+	  Position		  [495, 458]
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "1Mbps demod"
+      Ports		      [1, 1]
+      Position		      [155, 140, 250, 200]
+      TreatAsAtomicUnit	      off
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"1Mbps demod"
+	Location		[51, 235, 997, 555]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Chips"
+	  Position		  [45, 118, 75, 132]
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector"
+	  Ports			  [1, 1]
+	  Position		  [450, 113, 475, 137]
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Column vector"
+	  OutputDimensions	  "[11,10]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DBPSK\nDemodulator\nBaseband"
+	  Ports			  [1, 1]
+	  Position		  [695, 101, 770, 149]
+	  ShowName		  off
+	  SourceBlock		  "commdigbbndpm2/DBPSK\nDemodulator\nBaseband"
+	  SourceType		  "DBPSK Demodulator Baseband"
+	  Ph			  "0"
+	  numSamp		  "1"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Despread with\nBarker code"
+	  Position		  [305, 109, 380, 141]
+	  Gain			  "[1; -1; 1; 1; -1; 1; 1; 1; -1; -1; -1 ]'"
+	  Multiplication	  "Matrix(K*u)"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain1"
+	  Position		  [545, 109, 620, 141]
+	  ShowName		  off
+	  Gain			  "1/11"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reshape2"
+	  Ports			  [1, 1]
+	  Position		  [155, 112, 210, 138]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Customize"
+	  OutputDimensions	  "[Spreading_rate,PPDU_size_symbols]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "PPDU"
+	  Position		  [840, 118, 870, 132]
+	}
+	Line {
+	  SrcBlock		  "DBPSK\nDemodulator\nBaseband"
+	  SrcPort		  1
+	  DstBlock		  "PPDU"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Chips"
+	  SrcPort		  1
+	  DstBlock		  "Reshape2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Column\nvector"
+	  SrcPort		  1
+	  DstBlock		  "Gain1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Despread with\nBarker code"
+	  SrcPort		  1
+	  DstBlock		  "Column\nvector"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain1"
+	  SrcPort		  1
+	  DstBlock		  "DBPSK\nDemodulator\nBaseband"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reshape2"
+	  SrcPort		  1
+	  DstBlock		  "Despread with\nBarker code"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "1Mbps mod"
+      Ports		      [1, 1]
+      Position		      [20, 140, 115, 200]
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"1Mbps mod"
+	Location		[46, 204, 980, 557]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "PPDU"
+	  Position		  [30, 153, 60, 167]
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector"
+	  Ports			  [1, 1]
+	  Position		  [570, 148, 600, 172]
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Column vector"
+	  OutputDimensions	  "[1,1]"
+	  Port {
+	    PortNumber		    1
+	    Name		    "PPDU"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DBPSK\nModulator\nBaseband1"
+	  Ports			  [1, 1]
+	  Position		  [155, 137, 230, 183]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "commdigbbndpm2/DBPSK\nModulator\nBaseband"
+	  SourceType		  "DBPSK Modulator Baseband"
+	  Ph			  "0"
+	  numSamp		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Frame Status\nConversion"
+	  Ports			  [1, 1]
+	  Position		  [690, 144, 740, 176]
+	  ShowName		  off
+	  SourceBlock		  "dspsigattribs/Frame Status\nConversion"
+	  SourceType		  "Frame Status Conversion"
+	  growRefPort		  off
+	  outframe		  "Frame-based"
+	  Port {
+	    PortNumber		    1
+	    Name		    "PPDU"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Row\nvector"
+	  Ports			  [1, 1]
+	  Position		  [320, 148, 350, 172]
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Row vector"
+	  OutputDimensions	  "[1,1]"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Spread with\nBarker code"
+	  Position		  [430, 144, 505, 176]
+	  Gain			  "[1; -1; 1; 1; -1; 1; 1; 1; -1; -1; -1 ]"
+	  Multiplication	  "Matrix(K*u)"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Chips"
+	  Position		  [850, 153, 880, 167]
+	}
+	Line {
+	  SrcBlock		  "DBPSK\nModulator\nBaseband1"
+	  SrcPort		  1
+	  DstBlock		  "Row\nvector"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Spread with\nBarker code"
+	  SrcPort		  1
+	  DstBlock		  "Column\nvector"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PPDU"
+	  Labels		  [-1, 1]
+	  SrcBlock		  "Column\nvector"
+	  SrcPort		  1
+	  DstBlock		  "Frame Status\nConversion"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "PPDU"
+	  SrcPort		  1
+	  DstBlock		  "DBPSK\nModulator\nBaseband1"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PPDU"
+	  Labels		  [-1, 1]
+	  SrcBlock		  "Frame Status\nConversion"
+	  SrcPort		  1
+	  DstBlock		  "Chips"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Row\nvector"
+	  SrcPort		  1
+	  DstBlock		  "Spread with\nBarker code"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "2Mbps demod"
+      Ports		      [1, 1]
+      Position		      [155, 240, 250, 300]
+      TreatAsAtomicUnit	      off
+      MaskPromptString	      "Short Preamble"
+      MaskStyleString	      "checkbox"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "Short_preamble=@1;"
+      MaskInitialization      "if Short_preamble\n set_param([gcb '/PLCP demod"
+"'],'BlockChoice','PLCP demod for short preamble')\nelse\n  set_param([gcb '/P"
+"LCP demod'],'BlockChoice','PLCP demod for long preamble')\nend\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "off"
+      System {
+	Name			"2Mbps demod"
+	Location		[46, 220, 1006, 568]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Chips"
+	  Position		  [25, 138, 55, 152]
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector"
+	  Ports			  [1, 1]
+	  Position		  [365, 133, 390, 157]
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Column vector"
+	  OutputDimensions	  "[11,10]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DQPSK\nDemodulator\nBaseband"
+	  Ports			  [1, 1]
+	  Position		  [675, 166, 750, 214]
+	  ShowName		  off
+	  SourceBlock		  "commdigbbndpm2/DQPSK\nDemodulator\nBaseband"
+	  SourceType		  "DQPSK Demodulator Baseband"
+	  OutType		  "Bit"
+	  Dec			  "Gray"
+	  Ph			  "0"
+	  numSamp		  "1"
+	  Port {
+	    PortNumber		    1
+	    Name		    "PSDU"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 2]
+	  Position		  [560, 53, 565, 237]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "[PLCP_size_symbols PSDU_size_symbols]"
+	  Port {
+	    PortNumber		    1
+	    Name		    "PCLP symbols"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "PSDU symbols"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Despread with\nBarker code"
+	  Position		  [215, 129, 290, 161]
+	  Gain			  "[1; -1; 1; 1; -1; 1; 1; 1; -1; -1; -1 ]'"
+	  Multiplication	  "Matrix(K*u)"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain1"
+	  Position		  [445, 129, 520, 161]
+	  ShowName		  off
+	  Gain			  "1/11"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Matrix\nConcatenation3"
+	  Ports			  [2, 1]
+	  Position		  [840, 53, 845, 237]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Matrix\nConcatena"
+"tion"
+	  SourceType		  "Matrix Concatenation"
+	  numInports		  "2"
+	  catMethod		  "Vertical"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "PLCP demod"
+	  Ports			  [1, 1]
+	  Position		  [670, 80, 765, 120]
+	  AttributesFormatString  "%<BlockChoice>"
+	  BlockChoice		  "PLCP demod for long preamble"
+	  TemplateBlock		  "WiFi_lib/PLCP demod"
+	  MemberBlocks		  "PLCP demod for long preamble,PLCP demod for"
+" short preamble"
+	  TreatAsAtomicUnit	  off
+	  Port {
+	    PortNumber		    1
+	    Name		    "PCLP"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  System {
+	    Name		    "PLCP demod"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In"
+	      Position		      [20, 40, 40, 60]
+	      ForegroundColor	      "yellow"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "PLCP demod\nfor long preamble"
+	      Ports		      [1, 1]
+	      Position		      [100, 40, 140, 80]
+	      SourceBlock	      "WiFi_lib/PLCP demod\nfor long preamble"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      on
+	      Permissions	      "ReadWrite"
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      SimViewingDevice	      off
+	      DataTypeOverride	      "UseLocalSettings"
+	      MinMaxOverflowLogging   "UseLocalSettings"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      Position		      [200, 40, 220, 60]
+	    }
+	    Line {
+	      SrcBlock		      "In"
+	      SrcPort		      1
+	      DstBlock		      "PLCP demod\nfor long preamble"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "PLCP demod\nfor long preamble"
+	      SrcPort		      1
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reshape2"
+	  Ports			  [1, 1]
+	  Position		  [125, 133, 150, 157]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Customize"
+	  OutputDimensions	  "[Spreading_rate,PPDU_size_symbols]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "PPDU"
+	  Position		  [910, 138, 940, 152]
+	}
+	Line {
+	  Name			  "PCLP"
+	  Labels		  [0, 0]
+	  SrcBlock		  "PLCP demod"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation3"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PCLP symbols"
+	  Labels		  [-1, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "PLCP demod"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PSDU symbols"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "DQPSK\nDemodulator\nBaseband"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain1"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Despread with\nBarker code"
+	  SrcPort		  1
+	  DstBlock		  "Column\nvector"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Column\nvector"
+	  SrcPort		  1
+	  DstBlock		  "Gain1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Chips"
+	  SrcPort		  1
+	  DstBlock		  "Reshape2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Matrix\nConcatenation3"
+	  SrcPort		  1
+	  DstBlock		  "PPDU"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PSDU"
+	  Labels		  [0, 0]
+	  SrcBlock		  "DQPSK\nDemodulator\nBaseband"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Reshape2"
+	  SrcPort		  1
+	  DstBlock		  "Despread with\nBarker code"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "2Mbps mod"
+      Ports		      [1, 1]
+      Position		      [20, 240, 115, 300]
+      TreatAsAtomicUnit	      off
+      MaskPromptString	      "Short Preamble"
+      MaskStyleString	      "checkbox"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "Short_preamble=@1;"
+      MaskInitialization      "if Short_preamble\n set_param([gcb '/PLCP mod']"
+",'BlockChoice','PLCP mod for short preamble')\nelse\n  set_param([gcb '/PLCP "
+"mod'],'BlockChoice','PLCP mod for long preamble')\nend\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "off"
+      System {
+	Name			"2Mbps mod"
+	Location		[16, 219, 928, 585]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "PPDU"
+	  Position		  [20, 178, 50, 192]
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector"
+	  Ports			  [1, 1]
+	  Position		  [685, 173, 710, 197]
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Column vector"
+	  OutputDimensions	  "[1,1]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DQPSK\nModulator\nBaseband1"
+	  Ports			  [1, 1]
+	  Position		  [165, 207, 245, 253]
+	  ShowName		  off
+	  SourceBlock		  "commdigbbndpm2/DQPSK\nModulator\nBaseband"
+	  SourceType		  "DQPSK Modulator Baseband"
+	  InType		  "Bit"
+	  Enc			  "Gray"
+	  Ph			  "0"
+	  numSamp		  "1"
+	  Port {
+	    PortNumber		    1
+	    Name		    "PSDU symbols"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 2]
+	  Position		  [90, 86, 95, 279]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "[PLCP_size PSDU_size]"
+	  Port {
+	    PortNumber		    1
+	    Name		    "PCLP"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "PSDU"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Frame Status\nConversion"
+	  Ports			  [1, 1]
+	  Position		  [785, 166, 805, 204]
+	  ShowName		  off
+	  SourceBlock		  "dspsigattribs/Frame Status\nConversion"
+	  SourceType		  "Frame Status Conversion"
+	  growRefPort		  off
+	  outframe		  "Frame-based"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Matrix\nConcatenation4"
+	  Ports			  [2, 1]
+	  Position		  [365, 86, 370, 279]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Matrix\nConcatena"
+"tion"
+	  SourceType		  "Matrix Concatenation"
+	  numInports		  "2"
+	  catMethod		  "Vertical"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "PLCP mod"
+	  Ports			  [1, 1]
+	  Position		  [150, 115, 250, 155]
+	  AttributesFormatString  "%<BlockChoice>"
+	  BlockChoice		  "PLCP mod for long preamble"
+	  TemplateBlock		  "WiFi_lib/PLCP mod"
+	  MemberBlocks		  "PLCP mod for long preamble,PLCP mod for sho"
+"rt preamble"
+	  TreatAsAtomicUnit	  off
+	  Port {
+	    PortNumber		    1
+	    Name		    "PCLP symbols"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  System {
+	    Name		    "PLCP mod"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In"
+	      Position		      [20, 40, 40, 60]
+	      ForegroundColor	      "yellow"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "PLCP mod\nfor long preamble"
+	      Ports		      [1, 1]
+	      Position		      [100, 40, 140, 80]
+	      SourceBlock	      "WiFi_lib/PLCP mod\nfor long preamble"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      on
+	      Permissions	      "ReadWrite"
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      SimViewingDevice	      off
+	      DataTypeOverride	      "UseLocalSettings"
+	      MinMaxOverflowLogging   "UseLocalSettings"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      Position		      [200, 40, 220, 60]
+	    }
+	    Line {
+	      SrcBlock		      "In"
+	      SrcPort		      1
+	      DstBlock		      "PLCP mod\nfor long preamble"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "PLCP mod\nfor long preamble"
+	      SrcPort		      1
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Row\nvector"
+	  Ports			  [1, 1]
+	  Position		  [450, 173, 475, 197]
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Row vector"
+	  OutputDimensions	  "[1,1]"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Spread with\nBarker code"
+	  Position		  [535, 169, 610, 201]
+	  Gain			  "[1; -1; 1; 1; -1; 1; 1; 1; -1; -1; -1 ]"
+	  Multiplication	  "Matrix(K*u)"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Chips"
+	  Position		  [865, 178, 895, 192]
+	}
+	Line {
+	  SrcBlock		  "Spread with\nBarker code"
+	  SrcPort		  1
+	  DstBlock		  "Column\nvector"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Column\nvector"
+	  SrcPort		  1
+	  DstBlock		  "Frame Status\nConversion"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Frame Status\nConversion"
+	  SrcPort		  1
+	  DstBlock		  "Chips"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PCLP symbols"
+	  Labels		  [1, 0]
+	  SrcBlock		  "PLCP mod"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Matrix\nConcatenation4"
+	  SrcPort		  1
+	  DstBlock		  "Row\nvector"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PSDU symbols"
+	  Labels		  [-1, 1]
+	  SrcBlock		  "DQPSK\nModulator\nBaseband1"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation4"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "PCLP"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "PLCP mod"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "PPDU"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PSDU"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "DQPSK\nModulator\nBaseband1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Row\nvector"
+	  SrcPort		  1
+	  DstBlock		  "Spread with\nBarker code"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "5.5Mbps demod"
+      Ports		      [1, 1]
+      Position		      [155, 329, 250, 391]
+      TreatAsAtomicUnit	      off
+      MaskPromptString	      "Short Preamble"
+      MaskStyleString	      "checkbox"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "Short_preamble=@1;"
+      MaskInitialization      "if Short_preamble\n set_param([gcb '/PLCP demod"
+"'],'BlockChoice','PLCP demod for short preamble')\nelse\n  set_param([gcb '/P"
+"LCP demod'],'BlockChoice','PLCP demod for long preamble')\nend\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "off"
+      System {
+	Name			"5.5Mbps demod"
+	Location		[13, 118, 996, 660]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Chips"
+	  Position		  [15, 268, 45, 282]
+	}
+	Block {
+	  BlockType		  Abs
+	  Name			  "Abs1"
+	  Position		  [280, 363, 300, 397]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column vector"
+	  Ports			  [1, 1]
+	  Position		  [450, 158, 475, 182]
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Column vector"
+	  OutputDimensions	  "[11,10]"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [490, 406, 510, 424]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant3"
+	  Position		  [260, 318, 380, 332]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  FontName		  "Arial"
+	  Value			  "[0:4:(PSDU_size-1)]"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Convert from\n1:4 to 0:3"
+	  Ports			  [2, 1]
+	  Position		  [525, 370, 545, 390]
+	  NamePlacement		  "alternate"
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DQPSK\nDemodulator\nBaseband"
+	  Ports			  [1, 1]
+	  Position		  [585, 266, 660, 314]
+	  ShowName		  off
+	  SourceBlock		  "commdigbbndpm2/DQPSK\nDemodulator\nBaseband"
+	  SourceType		  "DQPSK Demodulator Baseband"
+	  OutType		  "Bit"
+	  Dec			  "Binary"
+	  Ph			  "0"
+	  numSamp		  "1"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 2]
+	  Position		  [85, 63, 90, 487]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "[PLCP_size_symbols*Spreading_rate PSDU_size"
+"*2]"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Despread with\nBarker code"
+	  Position		  [310, 154, 385, 186]
+	  Gain			  "[1; -1; 1; 1; -1; 1; 1; 1; -1; -1; -1 ]'"
+	  Multiplication	  "Matrix(K*u)"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Frame Status\nConversion1"
+	  Ports			  [1, 1]
+	  Position		  [710, 365, 735, 395]
+	  ShowName		  off
+	  SourceBlock		  "dspsigattribs/Frame Status\nConversion"
+	  SourceType		  "Frame Status Conversion"
+	  growRefPort		  off
+	  outframe		  "Frame-based"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Frame Status\nConversion3"
+	  Ports			  [1, 1]
+	  Position		  [360, 265, 385, 295]
+	  ShowName		  off
+	  SourceBlock		  "dspsigattribs/Frame Status\nConversion"
+	  SourceType		  "Frame Status Conversion"
+	  growRefPort		  off
+	  outframe		  "Frame-based"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain1"
+	  Position		  [515, 154, 590, 186]
+	  ShowName		  off
+	  Gain			  "1/11"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Integer to binary"
+	  Ports			  [1, 1]
+	  Position		  [600, 354, 650, 406]
+	  TreatAsAtomicUnit	  off
+	  System {
+	    Name		    "Integer to binary"
+	    Location		    [268, 147, 809, 393]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In"
+	      Position		      [25, 123, 55, 137]
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Matrix\nConcatenation1"
+	      Ports		      [2, 1]
+	      Position		      [280, 119, 285, 166]
+	      ShowName		      off
+	      SourceBlock	      "simulink3/Signals\n& Systems/Matrix\nCo"
+"ncatenation"
+	      SourceType	      "Matrix Concatenation"
+	      numInports	      "2"
+	      catMethod		      "Vertical"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "bit 0"
+	      Ports		      [1, 1]
+	      Position		      [150, 122, 205, 138]
+	      ShowName		      off
+	      TreatAsAtomicUnit	      off
+	      Port {
+		PortNumber		1
+		Name			"bit 0"
+		PropagatedSignals	"bit 0"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	      System {
+		Name			"bit 0"
+		Location		[389, 415, 933, 598]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In"
+		  Position		  [25, 43, 55, 57]
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Bitwise\nLogical Operator"
+		  Ports			  [1, 1]
+		  Position		  [195, 32, 230, 68]
+		  ShowName		  off
+		  SourceBlock		  "simulink3/Math/Bitwise\nLogical Ope"
+"rator"
+		  SourceType		  "BitwiseOperator"
+		  Operator		  "AND"
+		  Operand2		  "1"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  Position		  [180, 97, 220, 123]
+		  ShowName		  off
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  DataTypeConversion
+		  Name			  "Data Type Conversion"
+		  Position		  [85, 36, 140, 64]
+		  ShowName		  off
+		  DataType		  "uint8"
+		}
+		Block {
+		  BlockType		  DataTypeConversion
+		  Name			  "Data Type Conversion1"
+		  Position		  [295, 36, 350, 64]
+		  ShowName		  off
+		  DataType		  "double"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  Position		  [390, 44, 405, 71]
+		  ShowName		  off
+		  Operator		  ">"
+		  Port {
+		    PortNumber		    1
+		    Name		    "bit 0"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		    DataLogging		    off
+		    DataLoggingNameMode	    "SignalName"
+		    DataLoggingDecimateData off
+		    DataLoggingDecimation   "2"
+		    DataLoggingLimitDataPoints off
+		    DataLoggingMaxPoints    "5000"
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out"
+		  Position		  [475, 48, 505, 62]
+		}
+		Line {
+		  SrcBlock		  "Data Type Conversion1"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In"
+		  SrcPort		  1
+		  DstBlock		  "Data Type Conversion"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Data Type Conversion"
+		  SrcPort		  1
+		  DstBlock		  "Bitwise\nLogical Operator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  Points		  [150, 0; 0, -50]
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Bitwise\nLogical Operator"
+		  SrcPort		  1
+		  DstBlock		  "Data Type Conversion1"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "bit 0"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  Points		  [0, -5]
+		  DstBlock		  "Out"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "bit 1"
+	      Ports		      [1, 1]
+	      Position		      [150, 147, 205, 163]
+	      ShowName		      off
+	      TreatAsAtomicUnit	      off
+	      Port {
+		PortNumber		1
+		Name			"bit 1"
+		PropagatedSignals	"bit 0"
+		TestPoint		off
+		LinearAnalysisOutput	off
+		LinearAnalysisInput	off
+		RTWStorageClass		"Auto"
+		DataLogging		off
+		DataLoggingNameMode	"SignalName"
+		DataLoggingDecimateData	off
+		DataLoggingDecimation	"2"
+		DataLoggingLimitDataPoints off
+		DataLoggingMaxPoints	"5000"
+	      }
+	      System {
+		Name			"bit 1"
+		Location		[389, 415, 947, 612]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In"
+		  Position		  [25, 43, 55, 57]
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Bitwise\nLogical Operator"
+		  Ports			  [1, 1]
+		  Position		  [215, 32, 250, 68]
+		  ShowName		  off
+		  SourceBlock		  "simulink3/Math/Bitwise\nLogical Ope"
+"rator"
+		  SourceType		  "BitwiseOperator"
+		  Operator		  "AND"
+		  Operand2		  "2"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  Position		  [180, 97, 220, 123]
+		  ShowName		  off
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  DataTypeConversion
+		  Name			  "Data Type Conversion"
+		  Position		  [85, 36, 140, 64]
+		  ShowName		  off
+		  DataType		  "uint8"
+		}
+		Block {
+		  BlockType		  DataTypeConversion
+		  Name			  "Data Type Conversion1"
+		  Position		  [295, 36, 350, 64]
+		  ShowName		  off
+		  DataType		  "double"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  Position		  [390, 44, 405, 71]
+		  ShowName		  off
+		  Operator		  ">"
+		  Port {
+		    PortNumber		    1
+		    Name		    "bit 0"
+		    TestPoint		    off
+		    LinearAnalysisOutput    off
+		    LinearAnalysisInput	    off
+		    RTWStorageClass	    "Auto"
+		    DataLogging		    off
+		    DataLoggingNameMode	    "SignalName"
+		    DataLoggingDecimateData off
+		    DataLoggingDecimation   "2"
+		    DataLoggingLimitDataPoints off
+		    DataLoggingMaxPoints    "5000"
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out"
+		  Position		  [475, 48, 505, 62]
+		}
+		Line {
+		  Name			  "bit 0"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  Points		  [0, -5]
+		  DstBlock		  "Out"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Bitwise\nLogical Operator"
+		  SrcPort		  1
+		  DstBlock		  "Data Type Conversion1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  Points		  [150, 0; 0, -50]
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Data Type Conversion"
+		  SrcPort		  1
+		  DstBlock		  "Bitwise\nLogical Operator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In"
+		  SrcPort		  1
+		  DstBlock		  "Data Type Conversion"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Data Type Conversion1"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      Position		      [440, 138, 470, 152]
+	    }
+	    Line {
+	      SrcBlock		      "Matrix\nConcatenation1"
+	      SrcPort		      1
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "bit 1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "bit 1"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "bit 0"
+	      Labels		      [0, 0]
+	      SrcBlock		      "bit 0"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In"
+	      SrcPort		      1
+	      Points		      [0, 0; 55, 0]
+	      Branch {
+		DstBlock		"bit 0"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 25]
+		DstBlock		"bit 1"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Matrix\nConcatenation1"
+	  Ports			  [2, 1]
+	  Position		  [785, 245, 790, 425]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Matrix\nConcatena"
+"tion"
+	  SourceType		  "Matrix Concatenation"
+	  numInports		  "2"
+	  catMethod		  "Vertical"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Matrix\nConcatenation3"
+	  Ports			  [2, 1]
+	  Position		  [895, 89, 900, 416]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Matrix\nConcatena"
+"tion"
+	  SourceType		  "Matrix Concatenation"
+	  numInports		  "2"
+	  catMethod		  "Vertical"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "PLCP demod"
+	  Ports			  [1, 1]
+	  Position		  [635, 150, 730, 190]
+	  AttributesFormatString  "%<BlockChoice>"
+	  BlockChoice		  "PLCP demod for long preamble"
+	  TemplateBlock		  "WiFi_lib/PLCP demod"
+	  MemberBlocks		  "PLCP demod for long preamble,PLCP demod for"
+" short preamble"
+	  TreatAsAtomicUnit	  off
+	  Port {
+	    PortNumber		    1
+	    Name		    "PLCP"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  System {
+	    Name		    "PLCP demod"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In"
+	      Position		      [20, 40, 40, 60]
+	      ForegroundColor	      "yellow"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "PLCP demod\nfor long preamble"
+	      Ports		      [1, 1]
+	      Position		      [100, 40, 140, 80]
+	      SourceBlock	      "WiFi_lib/PLCP demod\nfor long preamble"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      on
+	      Permissions	      "ReadWrite"
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      SimViewingDevice	      off
+	      DataTypeOverride	      "UseLocalSettings"
+	      MinMaxOverflowLogging   "UseLocalSettings"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      Position		      [200, 40, 220, 60]
+	    }
+	    Line {
+	      SrcBlock		      "In"
+	      SrcPort		      1
+	      DstBlock		      "PLCP demod\nfor long preamble"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "PLCP demod\nfor long preamble"
+	      SrcPort		      1
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Pick Biggest"
+	  Ports			  [1, 1]
+	  Position		  [345, 360, 375, 400]
+	  SourceBlock		  "dspstat3/Maximum"
+	  SourceType		  "Maximum"
+	  fcn			  "Index"
+	  reset			  "None"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Pick symbol"
+	  Ports			  [2, 1]
+	  Position		  [475, 271, 540, 304]
+	  SourceBlock		  "dspindex/Variable\nSelector"
+	  SourceType		  "Variable Selector"
+	  rowsOrCols		  "Rows"
+	  IdxMode		  "Variable"
+	  Elements		  "[1 3]"
+	  ZerOneIdxMode		  "One-based"
+	  errmode		  "Clip Index"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reshape1"
+	  Ports			  [1, 1]
+	  Position		  [280, 268, 305, 292]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "1-D array"
+	  OutputDimensions	  "[Spreading_rate,PLCP_size_symbols]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reshape2"
+	  Ports			  [1, 1]
+	  Position		  [180, 158, 205, 182]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Customize"
+	  OutputDimensions	  "[Spreading_rate,PLCP_size_symbols]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reshape4"
+	  Ports			  [1, 1]
+	  Position		  [825, 323, 845, 347]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Column vector"
+	  OutputDimensions	  "[Spreading_rate,PLCP_size_symbols]"
+	  Port {
+	    PortNumber		    1
+	    Name		    "PSDU"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reshape5"
+	  Ports			  [1, 1]
+	  Position		  [710, 278, 735, 302]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Customize"
+	  OutputDimensions	  "[2,PSDU_size/4]"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1]
+	  Position		  [400, 315, 420, 335]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Transpose2"
+	  Ports			  [1, 1]
+	  Position		  [205, 361, 225, 399]
+	  ShowName		  off
+	  SourceBlock		  "dspmtrx3/Transpose"
+	  SourceType		  "Transpose"
+	  Hermitian		  off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Walsh"
+	  Ports			  [1, 1]
+	  Position		  [125, 348, 185, 412]
+	  TreatAsAtomicUnit	  off
+	  System {
+	    Name		    "Walsh"
+	    Location		    [159, 305, 878, 545]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In"
+	      Position		      [25, 38, 55, 52]
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "All 4, 5.5Mbps\n 8 chip complex codes"
+	      Position		      [45, 90, 120, 120]
+	      Value		      "cck_codes_55"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Frame Status\nConversion1"
+	      Ports		      [1, 1]
+	      Position		      [190, 88, 205, 122]
+	      ShowName		      off
+	      SourceBlock	      "dspsigattribs/Frame Status\nConversion"
+	      SourceType	      "Frame Status Conversion"
+	      growRefPort	      "off"
+	      outframe		      "Frame-based"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Frame Status\nConversion2"
+	      Ports		      [1, 1]
+	      Position		      [230, 29, 280, 61]
+	      ShowName		      off
+	      SourceBlock	      "dspsigattribs/Frame Status\nConversion"
+	      SourceType	      "Frame Status Conversion"
+	      growRefPort	      "off"
+	      outframe		      "Frame-based"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain1"
+	      Position		      [505, 40, 530, 70]
+	      ShowName		      off
+	      Gain		      "1/8"
+	    }
+	    Block {
+	      BlockType		      Math
+	      Name		      "Math\nFunction2"
+	      Ports		      [1, 1]
+	      Position		      [240, 90, 270, 120]
+	      ShowName		      off
+	      Operator		      "conj"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Matrix Multiply"
+	      Ports		      [2, 1]
+	      Position		      [370, 36, 425, 74]
+	      SourceBlock	      "dspmtrx3/Matrix Multiply"
+	      SourceType	      "Matrix Multiply"
+	      numInputPorts	      "2"
+	      OptimizationLevel	      "None"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reshape1"
+	      Ports		      [1, 1]
+	      Position		      [90, 33, 115, 57]
+	      ShowName		      off
+	      SourceBlock	      "simulink3/Signals\n& Systems/Reshape"
+	      SourceType	      "Reshape"
+	      OutputDimensionality    "Customize"
+	      OutputDimensions	      "[8,PSDU_size/4 ]"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Transpose1"
+	      Ports		      [1, 1]
+	      Position		      [165, 26, 185, 64]
+	      ShowName		      off
+	      SourceBlock	      "dspmtrx3/Transpose"
+	      SourceType	      "Transpose"
+	      Hermitian		      "off"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      Position		      [595, 48, 625, 62]
+	    }
+	    Line {
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Matrix Multiply"
+	      SrcPort		      1
+	      DstBlock		      "Gain1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In"
+	      SrcPort		      1
+	      DstBlock		      "Reshape1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Math\nFunction2"
+	      SrcPort		      1
+	      Points		      [80, 0]
+	      DstBlock		      "Matrix Multiply"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Frame Status\nConversion1"
+	      SrcPort		      1
+	      DstBlock		      "Math\nFunction2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Frame Status\nConversion2"
+	      SrcPort		      1
+	      DstBlock		      "Matrix Multiply"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Transpose1"
+	      SrcPort		      1
+	      DstBlock		      "Frame Status\nConversion2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reshape1"
+	      SrcPort		      1
+	      DstBlock		      "Transpose1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "All 4, 5.5Mbps\n 8 chip complex codes"
+	      SrcPort		      1
+	      DstBlock		      "Frame Status\nConversion1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "PPDU"
+	  Position		  [935, 248, 965, 262]
+	}
+	Line {
+	  SrcBlock		  "DQPSK\nDemodulator\nBaseband"
+	  SrcPort		  1
+	  DstBlock		  "Reshape5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Matrix\nConcatenation1"
+	  SrcPort		  1
+	  DstBlock		  "Reshape4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Frame Status\nConversion3"
+	  SrcPort		  1
+	  DstBlock		  "Pick symbol"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Frame Status\nConversion1"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant3"
+	  SrcPort		  1
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  Points		  [0, -30]
+	  DstBlock		  "Pick symbol"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Reshape1"
+	  SrcPort		  1
+	  DstBlock		  "Frame Status\nConversion3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reshape5"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Pick symbol"
+	  SrcPort		  1
+	  DstBlock		  "DQPSK\nDemodulator\nBaseband"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Integer to binary"
+	  SrcPort		  1
+	  DstBlock		  "Frame Status\nConversion1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert from\n1:4 to 0:3"
+	  SrcPort		  1
+	  DstBlock		  "Integer to binary"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  DstBlock		  "Convert from\n1:4 to 0:3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Pick Biggest"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  Branch {
+	    DstBlock		    "Sum1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Convert from\n1:4 to 0:3"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Abs1"
+	  SrcPort		  1
+	  DstBlock		  "Pick Biggest"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Transpose2"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  Branch {
+	    DstBlock		    "Abs1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -100]
+	    DstBlock		    "Reshape1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Walsh"
+	  SrcPort		  1
+	  DstBlock		  "Transpose2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Matrix\nConcatenation3"
+	  SrcPort		  1
+	  DstBlock		  "PPDU"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PSDU"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Reshape4"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation3"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "PLCP"
+	  Labels		  [1, 1]
+	  SrcBlock		  "PLCP demod"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Chips"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "Walsh"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "Reshape2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Column vector"
+	  SrcPort		  1
+	  DstBlock		  "Gain1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Despread with\nBarker code"
+	  SrcPort		  1
+	  DstBlock		  "Column vector"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain1"
+	  SrcPort		  1
+	  DstBlock		  "PLCP demod"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reshape2"
+	  SrcPort		  1
+	  DstBlock		  "Despread with\nBarker code"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "CCK"
+	  Position		  [484, 469]
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "5.5Mbps mod"
+      Ports		      [1, 1]
+      Position		      [20, 329, 115, 391]
+      TreatAsAtomicUnit	      off
+      MaskPromptString	      "Short Preamble"
+      MaskStyleString	      "checkbox"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "Short_preamble=@1;"
+      MaskInitialization      "if Short_preamble\n set_param([gcb '/PLCP mod']"
+",'BlockChoice','PLCP mod for short preamble')\nelse\n  set_param([gcb '/PLCP "
+"mod'],'BlockChoice','PLCP mod for long preamble')\nend\n"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "off"
+      System {
+	Name			"5.5Mbps mod"
+	Location		[18, 168, 1003, 683]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "PPDU"
+	  Position		  [20, 223, 50, 237]
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector"
+	  Ports			  [1, 1]
+	  Position		  [680, 123, 705, 147]
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Column vector"
+	  OutputDimensions	  "[1,1]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector1"
+	  Ports			  [1, 1]
+	  Position		  [175, 313, 200, 337]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Customize"
+	  OutputDimensions	  "[4,PSDU_size/4]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector2"
+	  Ports			  [1, 1]
+	  Position		  [310, 238, 335, 262]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Column vector"
+	  OutputDimensions	  "[8,PSDU_size/8]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector6"
+	  Ports			  [1, 1]
+	  Position		  [825, 313, 840, 337]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Column vector"
+	  OutputDimensions	  "[8,PSDU_size/8]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Column\nvector7"
+	  Ports			  [1, 1]
+	  Position		  [560, 238, 580, 262]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Row vector"
+	  OutputDimensions	  "[8,PSDU_size/8]"
+	}
+	Block {
+	  BlockType		  ComplexToMagnitudeAngle
+	  Name			  "Complex to\nMagnitude-Angle4"
+	  Ports			  [1, 1]
+	  Position		  [490, 235, 515, 265]
+	  ShowName		  off
+	  Output		  "Angle"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [500, 335, 530, 365]
+	  ShowName		  off
+	  Value			  "0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  Position		  [385, 320, 415, 350]
+	  ShowName		  off
+	  Value			  "pi/2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DQPSK\nModulator\nBaseband"
+	  Ports			  [1, 1]
+	  Position		  [395, 233, 445, 267]
+	  ShowName		  off
+	  SourceBlock		  "commdigbbndpm2/DQPSK\nModulator\nBaseband"
+	  SourceType		  "DQPSK Modulator Baseband"
+	  InType		  "Bit"
+	  Enc			  "Binary"
+	  Ph			  "0"
+	  numSamp		  "1"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 2]
+	  Position		  [90, 40, 95, 420]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "[PLCP_size PSDU_size]"
+	  Port {
+	    PortNumber		    1
+	    Name		    "PLCP"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "PSDU"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Frame Status\nConversion"
+	  Ports			  [1, 1]
+	  Position		  [790, 116, 810, 154]
+	  ShowName		  off
+	  SourceBlock		  "dspsigattribs/Frame Status\nConversion"
+	  SourceType		  "Frame Status Conversion"
+	  growRefPort		  off
+	  outframe		  "Frame-based"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [380, 385, 410, 415]
+	  ShowName		  off
+	  Gain			  "pi"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain1"
+	  Position		  [360, 285, 390, 315]
+	  ShowName		  off
+	  Gain			  "pi"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Matrix\nConcatenation1"
+	  Ports			  [8, 1]
+	  Position		  [770, 216, 775, 429]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Matrix\nConcatena"
+"tion"
+	  SourceType		  "Matrix Concatenation"
+	  numInports		  "8"
+	  catMethod		  "Vertical"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Matrix\nConcatenation4"
+	  Ports			  [2, 1]
+	  Position		  [890, 41, 895, 419]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Math\nOperations/Matrix\nConcatena"
+"tion"
+	  SourceType		  "Matrix Concatenation"
+	  numInports		  "2"
+	  catMethod		  "Vertical"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "PLCP mod"
+	  Ports			  [1, 1]
+	  Position		  [260, 115, 360, 155]
+	  AttributesFormatString  "%<BlockChoice>"
+	  BlockChoice		  "PLCP mod for long preamble"
+	  TemplateBlock		  "WiFi_lib/PLCP mod"
+	  MemberBlocks		  "PLCP mod for long preamble,PLCP mod for sho"
+"rt preamble"
+	  TreatAsAtomicUnit	  off
+	  System {
+	    Name		    "PLCP mod"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In"
+	      Position		      [20, 40, 40, 60]
+	      ForegroundColor	      "yellow"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "PLCP mod\nfor long preamble"
+	      Ports		      [1, 1]
+	      Position		      [100, 40, 140, 80]
+	      SourceBlock	      "WiFi_lib/PLCP mod\nfor long preamble"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      on
+	      Permissions	      "ReadWrite"
+	      TreatAsAtomicUnit	      off
+	      RTWSystemCode	      "Auto"
+	      RTWFcnNameOpts	      "Auto"
+	      RTWFileNameOpts	      "Auto"
+	      SimViewingDevice	      off
+	      DataTypeOverride	      "UseLocalSettings"
+	      MinMaxOverflowLogging   "UseLocalSettings"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      Position		      [200, 40, 220, 60]
+	    }
+	    Line {
+	      SrcBlock		      "In"
+	      SrcPort		      1
+	      DstBlock		      "PLCP mod\nfor long preamble"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "PLCP mod\nfor long preamble"
+	      SrcPort		      1
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Row\nvector"
+	  Ports			  [1, 1]
+	  Position		  [465, 123, 490, 147]
+	  SourceBlock		  "simulink/Math\nOperations/Reshape"
+	  SourceType		  "Reshape"
+	  OutputDimensionality	  "Row vector"
+	  OutputDimensions	  "[1,1]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Select dibits"
+	  Ports			  [1, 3]
+	  Position		  [245, 209, 250, 441]
+	  SourceBlock		  "dspindex/Multiport\nSelector"
+	  SourceType		  "Multiport Selector"
+	  rowsOrCols		  "Rows"
+	  idxCellArray		  "{ [1 2], 3,4}"
+	  idxErrMode		  "Generate Error"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Spread with\nBarker code"
+	  Position		  [540, 119, 615, 151]
+	  Gain			  "[1; -1; 1; 1; -1; 1; 1; 1; -1; -1; -1 ]"
+	  Multiplication	  "Matrix(K*u)"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1]
+	  Position		  [425, 290, 445, 310]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "calculate chips"
+	  Ports			  [4, 8]
+	  Position		  [635, 225, 715, 420]
+	  SourceBlock		  "WiFi_lib/11Mbps mod/calculate chips"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  on
+	  Permissions		  "ReadWrite"
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  SimViewingDevice	  off
+	  DataTypeOverride	  "UseLocalSettings"
+	  MinMaxOverflowLogging	  "UseLocalSettings"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Chips"
+	  Position		  [940, 223, 970, 237]
+	}
+	Line {
+	  SrcBlock		  "Column\nvector6"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "PLCP mod"
+	  SrcPort		  1
+	  DstBlock		  "Row\nvector"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PLCP"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "PLCP mod"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Spread with\nBarker code"
+	  SrcPort		  1
+	  DstBlock		  "Column\nvector"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Column\nvector"
+	  SrcPort		  1
+	  DstBlock		  "Frame Status\nConversion"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Frame Status\nConversion"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Matrix\nConcatenation4"
+	  SrcPort		  1
+	  DstBlock		  "Chips"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PSDU"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "Column\nvector1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "PPDU"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Column\nvector1"
+	  SrcPort		  1
+	  DstBlock		  "Select dibits"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Select dibits"
+	  SrcPort		  1
+	  DstBlock		  "Column\nvector2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Column\nvector2"
+	  SrcPort		  1
+	  DstBlock		  "DQPSK\nModulator\nBaseband"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DQPSK\nModulator\nBaseband"
+	  SrcPort		  1
+	  DstBlock		  "Complex to\nMagnitude-Angle4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nMagnitude-Angle4"
+	  SrcPort		  1
+	  DstBlock		  "Column\nvector7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "calculate chips"
+	  SrcPort		  2
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "calculate chips"
+	  SrcPort		  3
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "calculate chips"
+	  SrcPort		  4
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "calculate chips"
+	  SrcPort		  5
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "calculate chips"
+	  SrcPort		  6
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "calculate chips"
+	  SrcPort		  7
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "calculate chips"
+	  SrcPort		  8
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "Matrix\nConcatenation1"
+	  SrcPort		  1
+	  DstBlock		  "Column\nvector6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Column\nvector7"
+	  SrcPort		  1
+	  DstBlock		  "calculate chips"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "calculate chips"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "calculate chips"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "calculate chips"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Gain1"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "calculate chips"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Select dibits"
+	  SrcPort		  2
+	  Points		  [45, 0; 0, -25]
+	  DstBlock		  "Gain1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Select dibits"
+	  SrcPort		  3
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Row\nvector"
+	  SrcPort		  1
+	  DstBlock		  "Spread with\nBarker code"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "CCK"
+	  Position		  [486, 456]
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "AWGN"
+      Ports		      [1, 1]
+      Position		      [800, 112, 860, 168]
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      MaskDisplay	      "disp('Channel')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"AWGN"
+	Location		[355, 202, 595, 296]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [25, 43, 55, 57]
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "AWGN\nChannel"
+	  Ports			  [1, 1]
+	  Position		  [80, 29, 160, 71]
+	  ShowName		  off
+	  SourceBlock		  "commchan2/AWGN\nChannel"
+	  SourceType		  "AWGN Channel"
+	  seed			  "1237"
+	  noiseMode		  "Signal to noise ratio  (Es/No)"
+	  EsNodB		  "EsNo"
+	  SNRdB			  "10"
+	  Ps			  "1"
+	  Tsym			  "1/Chip_rate"
+	  variance		  "1"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [185, 43, 215, 57]
+	}
+	Line {
+	  SrcBlock		  "AWGN\nChannel"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  "AWGN\nChannel"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Channel"
+      Ports		      [1, 1]
+      Position		      [800, 20, 860, 70]
+      ShowPortLabels	      off
+      BlockChoice	      "AWGN"
+      TemplateBlock	      "self"
+      MemberBlocks	      "AWGN,None"
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"Channel"
+	Location		[148, 182, 646, 482]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [20, 40, 40, 60]
+	  ForegroundColor	  "yellow"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "AWGN"
+	  Ports			  [1, 1]
+	  Position		  [100, 40, 140, 80]
+	  SourceBlock		  "WiFi_lib/AWGN"
+	  SourceType		  "Unknown"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [200, 40, 220, 60]
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  "AWGN"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "AWGN"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Demodulate and despread"
+      Ports		      [1, 1]
+      Position		      [155, 25, 250, 85]
+      BlockChoice	      "11Mbps demod"
+      TemplateBlock	      "self"
+      MemberBlocks	      "11Mbps demod,1Mbps demod,2Mbps demod,5.5Mbps de"
+"mod"
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"Demodulate and despread"
+	Location		[148, 182, 646, 482]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Chips"
+	  Position		  [20, 40, 40, 60]
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "11Mbps demod"
+	  Ports			  [1, 1]
+	  Position		  [100, 40, 140, 80]
+	  SourceBlock		  "WiFi_lib/11Mbps demod"
+	  SourceType		  "Unknown"
+	  Short_preamble	  "off"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "PPDU"
+	  Position		  [200, 40, 220, 60]
+	}
+	Line {
+	  SrcBlock		  "Chips"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 10]
+	  DstBlock		  "11Mbps demod"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "11Mbps demod"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -10]
+	  DstBlock		  "PPDU"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Mix from"
+      Ports		      [1, 1]
+      Position		      [675, 22, 745, 68]
+      ShowPortLabels	      off
+      BlockChoice	      "Mix from center frequency"
+      TemplateBlock	      "self"
+      MemberBlocks	      "Mix from center frequency,No mix from center fr"
+"equency"
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"Mix from"
+	Location		[148, 182, 646, 482]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [20, 40, 40, 60]
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mix from\ncenter frequency"
+	  Ports			  [1, 1]
+	  Position		  [100, 40, 140, 80]
+	  SourceBlock		  "WiFi_lib/Mix from\ncenter frequency"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "on"
+	  TreatAsAtomicUnit	  "off"
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [200, 40, 220, 60]
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 10]
+	  DstBlock		  "Mix from\ncenter frequency"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mix from\ncenter frequency"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -10]
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Mix from\ncenter frequency"
+      Ports		      [1, 1]
+      Position		      [680, 109, 750, 171]
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"Mix from\ncenter frequency"
+	Location		[42, 231, 899, 638]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [15, 78, 45, 92]
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Align\ncomplex carriers"
+	  Ports			  [1, 1, 1]
+	  Position		  [475, 165, 515, 225]
+	  TreatAsAtomicUnit	  on
+	  System {
+	    Name		    "Align\ncomplex carriers"
+	    Location		    [280, 283, 640, 571]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In"
+	      Position		      [30, 132, 60, 148]
+	    }
+	    Block {
+	      BlockType		      EnablePort
+	      Name		      "Enable"
+	      Ports		      []
+	      Position		      [160, 40, 180, 60]
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Buffering\ncorrection"
+	      Ports		      [1, 1]
+	      Position		      [150, 125, 200, 155]
+	      SourceBlock	      "dspsigops/Integer Delay"
+	      SourceType	      "Integer Delay"
+	      delay		      "Channel_size_change*(Buffering_delay+Co"
+"rrection_delay)"
+	      ic		      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      Position		      [280, 132, 310, 148]
+	    }
+	    Line {
+	      SrcBlock		      "Buffering\ncorrection"
+	      SrcPort		      1
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In"
+	      SrcPort		      1
+	      DstBlock		      "Buffering\ncorrection"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DSP\nConstant"
+	  Ports			  [0, 1]
+	  Position		  [25, 179, 135, 211]
+	  ShowName		  off
+	  SourceBlock		  "dspsrcs3/DSP\nConstant"
+	  SourceType		  "DSP Constant"
+	  Value			  "-Center_frequency+39"
+	  InterpretAs1D		  "off"
+	  SampleMode		  "Discrete"
+	  Ts			  "PPDU_frame_period/8"
+	  FramebasedOutput	  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DSP\nConstant1"
+	  Ports			  [0, 1]
+	  Position		  [215, 109, 325, 141]
+	  ShowName		  off
+	  SourceBlock		  "dspsrcs3/DSP\nConstant"
+	  SourceType		  "DSP Constant"
+	  Value			  "Channel_size_change"
+	  InterpretAs1D		  "off"
+	  SampleMode		  "Discrete"
+	  Ts			  "PPDU_frame_period/8"
+	  FramebasedOutput	  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Frame Status\nConversion"
+	  Ports			  [1, 1]
+	  Position		  [155, 179, 205, 211]
+	  ShowName		  off
+	  SourceBlock		  "dspsigattribs/Frame Status\nConversion"
+	  SourceType		  "Frame Status Conversion"
+	  growRefPort		  "off"
+	  outframe		  "Frame-based"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Generate\ncentre frequency\n"
+	  Ports			  [1, 1]
+	  Position		  [240, 170, 315, 220]
+	  SourceBlock		  "commdigbbndfm2/M-FSK\nModulator\nBaseband"
+	  SourceType		  "M-FSK Modulator Baseband"
+	  M			  "79"
+	  InType		  "Integer"
+	  Enc			  "Binary"
+	  freqSep		  "1e6"
+	  phaseType		  "Continuous"
+	  numSamp		  "PPDU_size_chips"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator"
+	  Ports			  [1, 1]
+	  Position		  [405, 244, 435, 276]
+	  ShowName		  off
+	  Operator		  "NOT"
+	}
+	Block {
+	  BlockType		  Merge
+	  Name			  "Merge"
+	  Ports			  [2, 1]
+	  Position		  [560, 185, 600, 225]
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Move (mix) to\ncenter\nfrequency"
+	  Ports			  [2, 1]
+	  Position		  [640, 76, 685, 109]
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Pass through"
+	  Ports			  [1, 1, 1]
+	  Position		  [480, 280, 520, 340]
+	  TreatAsAtomicUnit	  on
+	  System {
+	    Name		    "Pass through"
+	    Location		    [619, 355, 943, 645]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In"
+	      Position		      [30, 132, 60, 148]
+	    }
+	    Block {
+	      BlockType		      EnablePort
+	      Name		      "Enable"
+	      Ports		      []
+	      Position		      [160, 40, 180, 60]
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      Position		      [280, 132, 310, 148]
+	    }
+	    Line {
+	      SrcBlock		      "In"
+	      SrcPort		      1
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [790, 88, 820, 102]
+	}
+	Line {
+	  SrcBlock		  "Frame Status\nConversion"
+	  SrcPort		  1
+	  DstBlock		  "Generate\ncentre frequency\n"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DSP\nConstant"
+	  SrcPort		  1
+	  DstBlock		  "Frame Status\nConversion"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  "Move (mix) to\ncenter\nfrequency"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Move (mix) to\ncenter\nfrequency"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Generate\ncentre frequency\n"
+	  SrcPort		  1
+	  Points		  [130, 0]
+	  Branch {
+	    DstBlock		    "Align\ncomplex carriers"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 115]
+	    DstBlock		    "Pass through"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "DSP\nConstant1"
+	  SrcPort		  1
+	  Points		  [0, 0; 60, 0]
+	  Branch {
+	    Points		    [105, 0]
+	    DstBlock		    "Align\ncomplex carriers"
+	    DstPort		    enable
+	  }
+	  Branch {
+	    DstBlock		    "Logical\nOperator"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator"
+	  SrcPort		  1
+	  Points		  [60, 0]
+	  DstBlock		  "Pass through"
+	  DstPort		  enable
+	}
+	Line {
+	  SrcBlock		  "Align\ncomplex carriers"
+	  SrcPort		  1
+	  DstBlock		  "Merge"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Pass through"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, -95]
+	  DstBlock		  "Merge"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Merge"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -105]
+	  DstBlock		  "Move (mix) to\ncenter\nfrequency"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Mix to"
+      Ports		      [1, 1]
+      Position		      [555, 22, 630, 68]
+      ShowPortLabels	      off
+      BlockChoice	      "Mix to center frequency"
+      TemplateBlock	      "self"
+      MemberBlocks	      "Mix to center frequency,No mix to center freque"
+"ncy"
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"Mix to"
+	Location		[148, 182, 646, 482]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [20, 40, 40, 60]
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mix to center\nfrequency"
+	  Ports			  [1, 1]
+	  Position		  [100, 40, 140, 80]
+	  SourceBlock		  "WiFi_lib/Mix to center\nfrequency"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "on"
+	  TreatAsAtomicUnit	  "off"
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [200, 40, 220, 60]
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 10]
+	  DstBlock		  "Mix to center\nfrequency"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mix to center\nfrequency"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -10]
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Mix to center\nfrequency"
+      Ports		      [1, 1]
+      Position		      [555, 110, 630, 170]
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"Mix to center\nfrequency"
+	Location		[182, 327, 771, 608]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [50, 53, 80, 67]
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DSP\nConstant"
+	  Ports			  [0, 1]
+	  Position		  [35, 181, 145, 209]
+	  ShowName		  off
+	  SourceBlock		  "dspsrcs3/DSP\nConstant"
+	  SourceType		  "DSP Constant"
+	  Value			  "Center_frequency+39"
+	  InterpretAs1D		  "off"
+	  SampleMode		  "Discrete"
+	  Ts			  "PPDU_frame_period/8"
+	  FramebasedOutput	  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Frame Status\nConversion"
+	  Ports			  [1, 1]
+	  Position		  [170, 174, 220, 206]
+	  ShowName		  off
+	  SourceBlock		  "dspsigattribs/Frame Status\nConversion"
+	  SourceType		  "Frame Status Conversion"
+	  growRefPort		  "off"
+	  outframe		  "Frame-based"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Generate\ncentre frequency\n"
+	  Ports			  [1, 1]
+	  Position		  [245, 165, 320, 215]
+	  SourceBlock		  "commdigbbndfm2/M-FSK\nModulator\nBaseband"
+	  SourceType		  "M-FSK Modulator Baseband"
+	  M			  "79"
+	  InType		  "Integer"
+	  Enc			  "Binary"
+	  freqSep		  "1e6"
+	  phaseType		  "Continuous"
+	  numSamp		  "PPDU_size_chips"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Move center\nfrequency"
+	  Ports			  [2, 1]
+	  Position		  [385, 51, 430, 84]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [535, 63, 565, 77]
+	}
+	Line {
+	  SrcBlock		  "Move center\nfrequency"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  "Move center\nfrequency"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DSP\nConstant"
+	  SrcPort		  1
+	  Points		  [0, -5]
+	  DstBlock		  "Frame Status\nConversion"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Generate\ncentre frequency\n"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, -115]
+	  DstBlock		  "Move center\nfrequency"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Frame Status\nConversion"
+	  SrcPort		  1
+	  DstBlock		  "Generate\ncentre frequency\n"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Modulate and spread"
+      Ports		      [1, 1]
+      Position		      [25, 26, 130, 84]
+      BlockChoice	      "11Mbps mod"
+      TemplateBlock	      "self"
+      MemberBlocks	      "11Mbps mod,1Mbps mod,2Mbps mod,5.5Mbps mod"
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"Modulate and spread"
+	Location		[148, 182, 646, 482]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "PPDU"
+	  Position		  [20, 40, 40, 60]
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "11Mbps mod"
+	  Ports			  [1, 1]
+	  Position		  [100, 40, 140, 80]
+	  SourceBlock		  "WiFi_lib/11Mbps mod"
+	  SourceType		  "Unknown"
+	  Short_preamble	  "off"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Chips"
+	  Position		  [200, 40, 220, 60]
+	}
+	Line {
+	  SrcBlock		  "PPDU"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 10]
+	  DstBlock		  "11Mbps mod"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "11Mbps mod"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -10]
+	  DstBlock		  "Chips"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "No mix from\ncenter frequency"
+      Ports		      [1, 1]
+      Position		      [680, 224, 750, 286]
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"No mix from\ncenter frequency"
+	Location		[182, 304, 661, 563]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [105, 98, 135, 112]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [340, 98, 370, 112]
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "No mix to center\nfrequency"
+      Ports		      [1, 1]
+      Position		      [555, 225, 630, 285]
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"No mix to center\nfrequency"
+	Location		[182, 327, 627, 569]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [70, 88, 100, 102]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [355, 88, 385, 102]
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "None"
+      Ports		      [1, 1]
+      Position		      [800, 197, 860, 253]
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      MaskDisplay	      "disp('Channel')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"None"
+	Location		[355, 202, 595, 296]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [25, 43, 55, 57]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [185, 43, 215, 57]
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "PLCP demod"
+      Ports		      [1, 1]
+      Position		      [430, 25, 515, 75]
+      BlockChoice	      "PLCP demod for long preamble"
+      TemplateBlock	      "self"
+      MemberBlocks	      "PLCP demod for long preamble,PLCP demod for sho"
+"rt preamble"
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"PLCP demod"
+	Location		[148, 182, 646, 482]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [20, 40, 40, 60]
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "PLCP demod\nfor long preamble"
+	  Ports			  [1, 1]
+	  Position		  [100, 40, 140, 80]
+	  SourceBlock		  "WiFi_lib/PLCP demod\nfor long preamble"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "on"
+	  TreatAsAtomicUnit	  "off"
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [200, 40, 220, 60]
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 10]
+	  DstBlock		  "PLCP demod\nfor long preamble"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "PLCP demod\nfor long preamble"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -10]
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "PLCP demod\nfor long preamble"
+      Ports		      [1, 1]
+      Position		      [430, 95, 510, 155]
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"PLCP demod\nfor long preamble"
+	Location		[286, 283, 624, 427]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [25, 43, 55, 57]
+	  Port {
+	    PortNumber		    1
+	    Name		    "PLCP"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DBPSK\nDemodulator\nBaseband"
+	  Ports			  [1, 1]
+	  Position		  [125, 27, 210, 73]
+	  ShowName		  off
+	  SourceBlock		  "commdigbbndpm2/DBPSK\nDemodulator\nBaseband"
+	  SourceType		  "DBPSK Demodulator Baseband"
+	  Ph			  "0"
+	  numSamp		  "1"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [290, 43, 320, 57]
+	}
+	Line {
+	  SrcBlock		  "DBPSK\nDemodulator\nBaseband"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PLCP"
+	  Labels		  [0, 0]
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  "DBPSK\nDemodulator\nBaseband"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "PLCP demod\nfor short preamble"
+      Ports		      [1, 1]
+      Position		      [430, 192, 510, 258]
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"PLCP demod\nfor short preamble"
+	Location		[290, 269, 726, 516]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [25, 108, 55, 122]
+	  Port {
+	    PortNumber		    1
+	    Name		    "PLCP"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DBPSK\nDemodulator\nBaseband"
+	  Ports			  [1, 1]
+	  Position		  [165, 56, 240, 104]
+	  ShowName		  off
+	  SourceBlock		  "commdigbbndpm2/DBPSK\nDemodulator\nBaseband"
+	  SourceType		  "DBPSK Demodulator Baseband"
+	  Ph			  "0"
+	  numSamp		  "1"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Preamble"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DQPSK\nDemodulator\nBaseband"
+	  Ports			  [1, 1]
+	  Position		  [165, 121, 240, 169]
+	  ShowName		  off
+	  SourceBlock		  "commdigbbndpm2/DQPSK\nDemodulator\nBaseband"
+	  SourceType		  "DQPSK Demodulator Baseband"
+	  OutType		  "Bit"
+	  Dec			  "Gray"
+	  Ph			  "0"
+	  numSamp		  "1"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Header"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 2]
+	  Position		  [100, 48, 105, 177]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "[PLCP_preamble_size PLCP_header_size/2]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Matrix\nConcatenation4"
+	  Ports			  [2, 1]
+	  Position		  [320, 48, 325, 177]
+	  ShowName		  off
+	  SourceBlock		  "simulink3/Signals\n& Systems/Matrix\nConcat"
+"enation"
+	  SourceType		  "Matrix Concatenation"
+	  numInports		  "2"
+	  catMethod		  "Vertical"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [365, 108, 395, 122]
+	}
+	Line {
+	  Name			  "PLCP"
+	  Labels		  [0, 0]
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "DQPSK\nDemodulator\nBaseband"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "DBPSK\nDemodulator\nBaseband"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Preamble"
+	  Labels		  [0, 0]
+	  SrcBlock		  "DBPSK\nDemodulator\nBaseband"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation4"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Header"
+	  Labels		  [0, 0]
+	  SrcBlock		  "DQPSK\nDemodulator\nBaseband"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Matrix\nConcatenation4"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "PLCP mod"
+      Ports		      [1, 1]
+      Position		      [285, 25, 370, 75]
+      BlockChoice	      "PLCP mod for long preamble"
+      TemplateBlock	      "self"
+      MemberBlocks	      "PLCP mod for long preamble,PLCP mod for short p"
+"reamble"
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"PLCP mod"
+	Location		[148, 182, 646, 482]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [20, 40, 40, 60]
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "PLCP mod\nfor long preamble"
+	  Ports			  [1, 1]
+	  Position		  [100, 40, 140, 80]
+	  SourceBlock		  "WiFi_lib/PLCP mod\nfor long preamble"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "on"
+	  TreatAsAtomicUnit	  "off"
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [200, 40, 220, 60]
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 10]
+	  DstBlock		  "PLCP mod\nfor long preamble"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "PLCP mod\nfor long preamble"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -10]
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "PLCP mod\nfor long preamble"
+      Ports		      [1, 1]
+      Position		      [290, 94, 375, 156]
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"PLCP mod\nfor long preamble"
+	Location		[361, 322, 716, 503]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [25, 88, 55, 102]
+	  Port {
+	    PortNumber		    1
+	    Name		    "PLCP"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DBPSK\nModulator\nBaseband1"
+	  Ports			  [1, 1]
+	  Position		  [145, 72, 220, 118]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "commdigbbndpm2/DBPSK\nModulator\nBaseband"
+	  SourceType		  "DBPSK Modulator Baseband"
+	  Ph			  "0"
+	  numSamp		  "1"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [300, 88, 330, 102]
+	}
+	Line {
+	  Name			  "PLCP"
+	  Labels		  [1, 0]
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  "DBPSK\nModulator\nBaseband1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DBPSK\nModulator\nBaseband1"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "PLCP mod\nfor short preamble"
+      Ports		      [1, 1]
+      Position		      [290, 194, 375, 256]
+      TreatAsAtomicUnit	      off
+      System {
+	Name			"PLCP mod\nfor short preamble"
+	Location		[140, 245, 495, 426]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [25, 88, 55, 102]
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DBPSK\nModulator\nBaseband1"
+	  Ports			  [1, 1]
+	  Position		  [145, 37, 220, 83]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "commdigbbndpm2/DBPSK\nModulator\nBaseband"
+	  SourceType		  "DBPSK Modulator Baseband"
+	  Ph			  "0"
+	  numSamp		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DQPSK\nModulator\nBaseband1"
+	  Ports			  [1, 1]
+	  Position		  [145, 102, 220, 148]
+	  ShowName		  off
+	  SourceBlock		  "commdigbbndpm2/DQPSK\nModulator\nBaseband"
+	  SourceType		  "DQPSK Modulator Baseband"
+	  InType		  "Bit"
+	  Enc			  "Gray"
+	  Ph			  "0"
+	  numSamp		  "1"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 2]
+	  Position		  [80, 28, 85, 157]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "[PLCP_preamble_size PLCP_header_size]"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Preamble"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "Header"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Matrix\nConcatenation4"
+	  Ports			  [2, 1]
+	  Position		  [270, 28, 275, 157]
+	  ShowName		  off
+	  SourceBlock		  "simulink3/Signals\n& Systems/Matrix\nConcat"
+"enation"
+	  SourceType		  "Matrix Concatenation"
+	  numInports		  "2"
+	  catMethod		  "Vertical"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [300, 88, 330, 102]
+	}
+	Line {
+	  SrcBlock		  "DBPSK\nModulator\nBaseband1"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation4"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Preamble"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "DBPSK\nModulator\nBaseband1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DQPSK\nModulator\nBaseband1"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation4"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Header"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "DQPSK\nModulator\nBaseband1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Matrix\nConcatenation4"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Subsystem3"
+      Ports		      [1, 1]
+      Position		      [795, 281, 865, 309]
+      ShowName		      off
+      TreatAsAtomicUnit	      off
+      MaskType		      "Display sample rate for framebased signals"
+      MaskPromptString	      "Units"
+      MaskStyleString	      "popup(Hz|KHz|MHz)"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "Units=@1;"
+      MaskInitialization      "switch Units\ncase 1\n     Units_string='Hz';\n"
+"case 2\n     Units_string='KHz';\ncase 3\n     Units_string='MHz';\nend"
+      MaskDisplay	      "disp(['Rate (' Units_string ')'])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "MHz"
+      System {
+	Name			"Subsystem3"
+	Location		[308, 249, 914, 413]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [25, 58, 55, 72]
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Divide by\nrate units"
+	  Position		  [425, 41, 490, 69]
+	  Gain			  "1/10^((Units-1)*3)"
+	}
+	Block {
+	  BlockType		  Probe
+	  Name			  "Probe"
+	  Ports			  [1, 2]
+	  Position		  [90, 27, 230, 98]
+	  ProbeWidth		  off
+	  ProbeComplexSignal	  off
+	  ProbeSignalDimensions	  on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [320, 36, 365, 69]
+	  Inputs		  "/*"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector"
+	  Ports			  [1, 1]
+	  Position		  [250, 26, 285, 64]
+	  Elements		  "[1]"
+	  InputPortWidth	  "2"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector1"
+	  Ports			  [1, 1]
+	  Position		  [250, 61, 285, 99]
+	  Elements		  "[1]"
+	  InputPortWidth	  "2"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Rate"
+	  Position		  [535, 48, 565, 62]
+	}
+	Line {
+	  SrcBlock		  "Divide by\nrate units"
+	  SrcPort		  1
+	  DstBlock		  "Rate"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Probe"
+	  SrcPort		  1
+	  DstBlock		  "Selector"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Probe"
+	  SrcPort		  2
+	  DstBlock		  "Selector1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector1"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  "Probe"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Divide by\nrate units"
+	  DstPort		  1
+	}
+      }
+    }
+  }
+}

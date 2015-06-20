@@ -1,0 +1,7 @@
+libvigenereInitialize
+libvigenereInitializeWithHandlers
+libvigenereTerminate
+libvigenerePrintStackTrace
+mlxEncrypt
+mlxDecrypt
+

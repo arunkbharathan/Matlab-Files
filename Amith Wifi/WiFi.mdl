@@ -1,0 +1,3694 @@
+Model {
+  Name			  "WiFi"
+  Version		  6.1
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.625"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  PreLoadFcn		  "EsNo=18; Distance=.1;"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "user"
+  WideLines		  off
+  ShowLineDimensions	  on
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  on
+  BlockParametersDataTip  on
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Wed Mar 27 08:36:45 2002"
+  Creator		  "Stuart Amit"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "y"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Dec 15 11:21:16 2004"
+  ModelVersionFormat	  "1.%<AutoIncrement:625>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  StrictBusMsg		  "None"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.0.4"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.0.4"
+	  StartTime		  "0.0"
+	  StopTime		  "inf"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "VariableStepDiscrete"
+	  SolverName		  "VariableStepDiscrete"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.0.4"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  off
+	  SaveState		  off
+	  SignalLogging		  on
+	  SaveTime		  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "sigsOut"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.0.4"
+	  BlockReduction	  on
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  ConditionalExecOptimization "on_for_testing"
+	  InlineParams		  off
+	  InlineInvariantSignals  on
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.0.4"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterPrecisionLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.0.4"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.0.4"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.0.4"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  TemplateMakefile	  "grt_default_tmf"
+	  Description		  "Generic Real-Time Target"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.0.4"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      CustomSymbolStr	      "$R$N$M"
+	      MangleLength	      1
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.0.4"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Abs
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ComplexToMagnitudeAngle
+      Output		      "Magnitude and angle"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ComplexToRealImag
+      Output		      "Real and imag"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      OutDataTypeMode	      "Inherit via back propagation"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      ConvertRealWorld	      "Real World Value (RWV)"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      EnablePort
+      StatesWhenEnabling      "held"
+      ShowOutputPort	      off
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      FrameConversion
+      OutFrame		      "Frame based"
+    }
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "sfix(16)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "2^0"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Goto
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Ground
+    }
+    Block {
+      BlockType		      Inport
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Math
+      Operator		      "exp"
+      OutputSignalType	      "auto"
+      SampleTime	      "-1"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      MFile		      "mlfile"
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Probe
+      ProbeWidth	      on
+      ProbeSampleTime	      on
+      ProbeComplexSignal      on
+      ProbeSignalDimensions   off
+      ProbeFramedSignal	      off
+      ProbeWidthDataType      "double"
+      ProbeSampleTimeDataType "double"
+      ProbeComplexityDataType "double"
+      ProbeDimensionsDataType "double"
+      ProbeFrameDataType      "double"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      RealImagToComplex
+      Input		      "Real and imag"
+      ConstantPart	      "0"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      RelationalOperator
+      Operator		      ">="
+      InputSameDT	      on
+      LogicOutDataTypeMode    "Logical (see Configuration Parameters: Optimiza"
+"tion)"
+      LogicDataType	      "uint(8)"
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Rounding
+      Operator		      "floor"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Selector
+      InputType		      "Vector"
+      IndexMode		      "One-based"
+      ElementSrc	      "Internal"
+      Elements		      "1"
+      RowSrc		      "Internal"
+      Rows		      "1"
+      ColumnSrc		      "Internal"
+      Columns		      "1"
+      InputPortWidth	      "-1"
+      IndexIsStartValue	      off
+      OutputPortSize	      "1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      FixptAsFi		      off
+    }
+    Block {
+      BlockType		      Trigonometry
+      Operator		      "sin"
+      OutputSignalType	      "auto"
+      SampleTime	      "-1"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "WiFi"
+    Location		    [32, 111, 1003, 681]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    212
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "BER meters"
+      Ports		      [2]
+      Position		      [420, 404, 495, 491]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      System {
+	Name			"BER meters"
+	Location		[85, 105, 937, 652]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Tx Bits"
+	  Position		  [35, 113, 65, 127]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Rx Bits"
+	  Position		  [30, 358, 60, 372]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 3]
+	  Position		  [120, 70, 125, 170]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "[PLCP_preamble_size PLCP_header_size PSDU_s"
+"ize]"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Tx PLCP Preamble"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	    ShowSigGenPortName	    on
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "Tx PLCP Header"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	    ShowSigGenPortName	    on
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "Tx PSDU"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	    ShowSigGenPortName	    on
+	  }
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux1"
+	  Ports			  [1, 3]
+	  Position		  [115, 316, 120, 414]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "[PLCP_preamble_size PLCP_header_size PSDU_s"
+"ize]"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Rx PLCP Preamble"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	    ShowSigGenPortName	    on
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "Rx PLCP Header"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	    ShowSigGenPortName	    on
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "Rx PSDU"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	    ShowSigGenPortName	    on
+	  }
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display"
+	  Ports			  [1]
+	  Position		  [525, 66, 615, 134]
+	  ShowName		  off
+	  Decimation		  "1"
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display1"
+	  Ports			  [1]
+	  Position		  [520, 351, 610, 419]
+	  ShowName		  off
+	  Decimation		  "1"
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display2"
+	  Ports			  [1]
+	  Position		  [525, 211, 615, 279]
+	  ShowName		  off
+	  Decimation		  "1"
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display3"
+	  Ports			  [1]
+	  Position		  [710, 286, 795, 314]
+	  ShowName		  off
+	  Decimation		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Header Error Rate Calculation"
+	  Ports			  [2, 1]
+	  Position		  [315, 218, 390, 267]
+	  SourceBlock		  "commsink2/Error Rate\nCalculation"
+	  SourceType		  "Error Rate Calculation"
+	  N			  "PLCP_header_receive_delay"
+	  st_delay		  "PLCP_header_computation_delay"
+	  cp_mode		  "Entire frame"
+	  subframe		  "3:4808"
+	  PMode			  "Port"
+	  WsName		  "ErrorVec"
+	  RsMode2		  off
+	  stop			  off
+	  numErr		  "100"
+	  maxBits		  "1e6"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Header BER"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	    ShowSigGenPortName	    on
+	  }
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [3, 1]
+	  Position		  [680, 211, 685, 249]
+	  ShowName		  off
+	  Inputs		  "3"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "PSDU Error Rate Calculation"
+	  Ports			  [2, 1]
+	  Position		  [310, 358, 385, 407]
+	  SourceBlock		  "commsink2/Error Rate\nCalculation"
+	  SourceType		  "Error Rate Calculation"
+	  N			  "PSDU_receive_delay"
+	  st_delay		  "PSDU_computation_delay"
+	  cp_mode		  "Entire frame"
+	  subframe		  "3:4808"
+	  PMode			  "Port"
+	  WsName		  "ErrorVec"
+	  RsMode2		  off
+	  stop			  on
+	  numErr		  "100"
+	  maxBits		  "1e6"
+	  Port {
+	    PortNumber		    1
+	    Name		    "PSDU BER"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	    ShowSigGenPortName	    on
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Preamble Error Rate Calculation"
+	  Ports			  [2, 1]
+	  Position		  [315, 73, 390, 122]
+	  SourceBlock		  "commsink2/Error Rate\nCalculation"
+	  SourceType		  "Error Rate Calculation"
+	  N			  "PLCP_preamble_receive_delay"
+	  st_delay		  "PLCP_preamble_computation_delay"
+	  cp_mode		  "Entire frame"
+	  subframe		  "3:4808"
+	  PMode			  "Port"
+	  WsName		  "ErrorVec"
+	  RsMode2		  off
+	  stop			  off
+	  numErr		  "100"
+	  maxBits		  "1e6"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Preamble BER"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	    ShowSigGenPortName	    on
+	  }
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector1"
+	  Ports			  [1, 1]
+	  Position		  [465, 273, 495, 297]
+	  ShowName		  off
+	  Elements		  "[1]"
+	  InputPortWidth	  "3"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector2"
+	  Ports			  [1, 1]
+	  Position		  [465, 128, 495, 152]
+	  ShowName		  off
+	  Elements		  "[1]"
+	  InputPortWidth	  "3"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector3"
+	  Ports			  [1, 1]
+	  Position		  [465, 418, 495, 442]
+	  ShowName		  off
+	  Elements		  "[1]"
+	  InputPortWidth	  "3"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector4"
+	  Ports			  [1, 1]
+	  Position		  [465, 153, 495, 177]
+	  ShowName		  off
+	  Elements		  "3"
+	  InputPortWidth	  "3"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector5"
+	  Ports			  [1, 1]
+	  Position		  [465, 303, 495, 327]
+	  ShowName		  off
+	  Elements		  "3"
+	  InputPortWidth	  "3"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector6"
+	  Ports			  [1, 1]
+	  Position		  [465, 458, 495, 482]
+	  ShowName		  off
+	  Elements		  "3"
+	  InputPortWidth	  "3"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [3, 1]
+	  Position		  [660, 290, 680, 310]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+++"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace"
+	  Position		  [730, 215, 790, 245]
+	  ShowName		  off
+	  VariableName		  "BER"
+	  MaxDataPoints		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Line {
+	  Name			  "Preamble BER"
+	  SrcBlock		  "Preamble Error Rate Calculation"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  Branch {
+	    Labels		    [-1, 1]
+	    DstBlock		    "Display"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 40]
+	    Branch {
+	      DstBlock		      "Selector2"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 25]
+	      DstBlock		      "Selector4"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  Name			  "PSDU BER"
+	  SrcBlock		  "PSDU Error Rate Calculation"
+	  SrcPort		  1
+	  Points		  [50, 0]
+	  Branch {
+	    Labels		    [-1, 1]
+	    DstBlock		    "Display1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 45]
+	    Branch {
+	      DstBlock		      "Selector3"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 40]
+	      DstBlock		      "Selector6"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  Name			  "Rx PLCP Preamble"
+	  Labels		  [-1, 1]
+	  SrcBlock		  "Demux1"
+	  SrcPort		  1
+	  Points		  [65, 0; 0, -225]
+	  DstBlock		  "Preamble Error Rate Calculation"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Tx PLCP Preamble"
+	  Labels		  [-1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "Preamble Error Rate Calculation"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Header BER"
+	  SrcBlock		  "Header Error Rate Calculation"
+	  SrcPort		  1
+	  Points		  [50, 0]
+	  Branch {
+	    Labels		    [-1, 1]
+	    DstBlock		    "Display2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 40]
+	    Branch {
+	      DstBlock		      "Selector1"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 30]
+	      DstBlock		      "Selector5"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  Name			  "Rx PSDU"
+	  Labels		  [-1, 1]
+	  SrcBlock		  "Demux1"
+	  SrcPort		  3
+	  DstBlock		  "PSDU Error Rate Calculation"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Tx PSDU"
+	  Labels		  [-1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  Points		  [35, 0; 0, 135; 50, 0; 0, 80]
+	  DstBlock		  "PSDU Error Rate Calculation"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Tx PLCP Header"
+	  Labels		  [-1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  Points		  [50, 0; 0, 110]
+	  DstBlock		  "Header Error Rate Calculation"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Rx PLCP Header"
+	  Labels		  [-1, 1]
+	  SrcBlock		  "Demux1"
+	  SrcPort		  2
+	  Points		  [75, 0; 0, -110]
+	  DstBlock		  "Header Error Rate Calculation"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Tx Bits"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Rx Bits"
+	  SrcPort		  1
+	  DstBlock		  "Demux1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector2"
+	  SrcPort		  1
+	  Points		  [130, 0; 0, 80]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector1"
+	  SrcPort		  1
+	  Points		  [130, 0; 0, -55]
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Selector3"
+	  SrcPort		  1
+	  Points		  [140, 0; 0, -190]
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Display3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector4"
+	  SrcPort		  1
+	  Points		  [145, 0; 0, 123]
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector5"
+	  SrcPort		  1
+	  Points		  [149, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Selector6"
+	  SrcPort		  1
+	  Points		  [170, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  3
+	}
+	Annotation {
+	  Name			  "Calculates BERs of each subframe"
+	  Position		  [393, 518]
+	  BackgroundColor	  "yellow"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Channel"
+      Ports		      [1, 1]
+      Position		      [410, 203, 495, 277]
+      AttributesFormatString  "%<BlockChoice>"
+      ShowPortLabels	      off
+      BlockChoice	      "AWGN"
+      TemplateBlock	      "WiFi_lib/Channel"
+      MemberBlocks	      "AWGN,None"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      System {
+	Name			"Channel"
+	Location		[148, 182, 646, 482]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [20, 40, 40, 60]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "AWGN"
+	  Ports			  [1, 1]
+	  Position		  [100, 40, 140, 80]
+	  SourceBlock		  "WiFi_lib/AWGN"
+	  SourceType		  ""
+	  ShowPortLabels	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [200, 40, 220, 60]
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  "AWGN"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "AWGN"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Chip rate"
+      Ports		      [1]
+      Position		      [840, 432, 930, 458]
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From"
+      Position		      [270, 416, 325, 434]
+      ShowName		      off
+      DialogController	      "Simulink.DDGSource"
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "Tx_Bits"
+      Port {
+	PortNumber		1
+	Name			"Tx PPDU"
+	PropagatedSignals	"PPDU"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+	ShowSigGenPortName	on
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From1"
+      Position		      [270, 462, 325, 478]
+      ShowName		      off
+      DialogController	      "Simulink.DDGSource"
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "Rx_Bits"
+      Port {
+	PortNumber		1
+	Name			"Rx PPDU"
+	PropagatedSignals	"PPDU"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+	ShowSigGenPortName	on
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From2"
+      Position		      [555, 392, 615, 408]
+      ShowName		      off
+      DialogController	      "Simulink.DDGSource"
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "Rx_Signal"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From3"
+      Position		      [555, 437, 615, 453]
+      ShowName		      off
+      DialogController	      "Simulink.DDGSource"
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "Tx_Chips"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From4"
+      Position		      [555, 482, 610, 498]
+      ShowName		      off
+      DialogController	      "Simulink.DDGSource"
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "Rx_Bits"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From5"
+      Position		      [15, 418, 120, 432]
+      ShowName		      off
+      DialogController	      "Simulink.DDGSource"
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "Rx_Signal"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From8"
+      Position		      [15, 458, 120, 472]
+      ShowName		      off
+      DialogController	      "Simulink.DDGSource"
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "Rx_Signal_Aligned"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Global Variables1"
+      Ports		      []
+      Position		      [705, 48, 800, 100]
+      BackgroundColor	      "yellow"
+      ShowName		      off
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskDisplay	      "disp('Info')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Global Variables1"
+	Location		[172, 208, 744, 546]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Annotation {
+	  Name			  "Implements: IEEE Std 802.11b-1999 PHY\n(Sup"
+"plement to ANSI/IEEE Std 802.11, 1999 Edition)\nAvailable from: http://standa"
+"rds.ieee.org/reading/ieee/std/lanman/\n\nSystem Parameters: Double click bloc"
+"k to display and set\n\n* Mode/Data Rate: Choose from 1Mpbs, 2Mbps, 5.5Mbps o"
+"r 11Mbps\n* Packet size: 1-4095 Bytes\n* Use short preamble: An option for 2,"
+" 5.5 or 11Mbps options only\n* Channel number: Select from 1 to 11\n* Channel"
+" type: None or AWGN\n* EsNo: Channel noise power for AWGN option\n"
+	  Position		  [89, 169]
+	  HorizontalAlignment	  "left"
+	  FontName		  "Arial"
+	  FontSize		  12
+	}
+      }
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto"
+      Position		      [255, 207, 315, 223]
+      NamePlacement	      "alternate"
+      ShowName		      off
+      DialogController	      "Simulink.DDGSource"
+      GotoTag		      "Tx_Bits"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto1"
+      Position		      [875, 212, 935, 228]
+      NamePlacement	      "alternate"
+      ShowName		      off
+      DialogController	      "Simulink.DDGSource"
+      GotoTag		      "Rx_Bits"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto2"
+      Position		      [255, 257, 315, 273]
+      NamePlacement	      "alternate"
+      ShowName		      off
+      DialogController	      "Simulink.DDGSource"
+      GotoTag		      "Tx_Chips"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto3"
+      Position		      [830, 247, 935, 263]
+      NamePlacement	      "alternate"
+      ShowName		      off
+      DialogController	      "Simulink.DDGSource"
+      GotoTag		      "Rx_Signal_Aligned"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto4"
+      Position		      [570, 262, 650, 278]
+      NamePlacement	      "alternate"
+      ShowName		      off
+      DialogController	      "Simulink.DDGSource"
+      GotoTag		      "Rx_Signal"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Instrumentation \n(Remove to speed up\nsimulati"
+"on)"
+      Ports		      [2]
+      Position		      [175, 407, 240, 483]
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "Instrumentation"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Instrumentation \n(Remove to speed up\nsimula"
+"tion)"
+	Location		[131, 134, 692, 587]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Rx Signal"
+	  Position		  [60, 198, 90, 212]
+	  NamePlacement		  "alternate"
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Rx Signal Aligned"
+	  Position		  [60, 333, 90, 347]
+	  NamePlacement		  "alternate"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "State"
+	  Position		  [240, 45, 270, 75]
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Subsystem"
+	  Ports			  [2, 0, 1]
+	  Position		  [215, 136, 455, 409]
+	  TreatAsAtomicUnit	  on
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "Subsystem"
+	    Location		    [171, 179, 750, 639]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Rx Signal "
+	      Position		      [75, 123, 105, 137]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Rx Signal aligned\nto Chip boundary"
+	      Position		      [75, 243, 105, 257]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      EnablePort
+	      Name		      "Enable"
+	      Ports		      []
+	      Position		      [250, 30, 270, 50]
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Discrete-Time\nEye Diagram\nScope"
+	      Tag		      "EyeDiagram"
+	      Ports		      [1]
+	      Position		      [370, 226, 415, 274]
+	      Diagnostics	      "AllowInheritedTsInSrc"
+	      SourceBlock	      "commsink2/Discrete-Time\nEye Diagram\nS"
+"cope"
+	      SourceType	      "Discrete-Time Eye Diagram Scope"
+	      ShowPortLabels	      on
+	      sampPerSymb	      "8"
+	      offsetEye		      "0"
+	      symbPerTrace	      "1"
+	      numTraces		      "40"
+	      numNewFrames	      "40"
+	      LineStyles	      "-"
+	      LineColors	      "b"
+	      dupPoints		      on
+	      fading		      on
+	      render		      on
+	      AxisGrid		      off
+	      yMin		      "-1.38526904502056"
+	      yMax		      "1.38777979583567"
+	      inphaseLabel	      "In-phase Amplitude"
+	      quadratureLabel	      "Quadrature Amplitude"
+	      openScopeAtSimStart     on
+	      dispDiagram	      "In-phase and Quadrature"
+	      FrameNumber	      off
+	      FigPos		      "[22 -82 434 499]"
+	      figTitle		      "Rx Signal"
+	      block_type_	      "eye"
+	      numLinesMax	      "8"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Discrete-Time\nScatter Plot\nScope"
+	      Tag		      "ScatterPlot"
+	      Ports		      [1]
+	      Position		      [365, 355, 410, 405]
+	      Diagnostics	      "AllowInheritedTsInSrc"
+	      SourceBlock	      "commsink2/Discrete-Time\nScatter Plot\n"
+"Scope"
+	      SourceType	      "Discrete-Time Scatter Plot Scope"
+	      ShowPortLabels	      on
+	      sampPerSymb	      "8"
+	      offsetEye		      "0"
+	      numTraces		      "100"
+	      numNewFrames	      "100"
+	      LineMarkers	      "."
+	      LineColors	      "b"
+	      fading		      on
+	      render		      on
+	      AxisGrid		      on
+	      xMin		      "-1"
+	      xMax		      "1"
+	      yMin		      "-1"
+	      yMax		      "1"
+	      inphaseLabel	      "In-phase Amplitude"
+	      quadratureLabel	      "Quadrature Amplitude"
+	      openScopeAtSimStart     on
+	      FrameNumber	      off
+	      FigPos		      "[556 43 356 356]"
+	      figTitle		      "Rx Chips"
+	      numLinesMax	      "8"
+	      block_type_	      "scatter"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Spectrum\nScope"
+	      Ports		      [1]
+	      Position		      [380, 105, 415, 155]
+	      SourceBlock	      "dspsnks4/Spectrum\nScope"
+	      SourceType	      "Spectrum Scope"
+	      ShowPortLabels	      off
+	      ScopeProperties	      on
+	      Domain		      "Frequency"
+	      HorizSpan		      "1"
+	      UseBuffer		      on
+	      BufferSize	      "1024"
+	      Overlap		      "0"
+	      inpFftLenInherit	      on
+	      FFTlength		      "1024"
+	      numAvg		      "5"
+	      DisplayProperties	      off
+	      AxisGrid		      on
+	      Memory		      off
+	      FrameNumber	      on
+	      AxisLegend	      off
+	      AxisZoom		      off
+	      OpenScopeAtSimStart     on
+	      OpenScopeImmediately    off
+	      FigPos		      "[23 469 431 222]"
+	      AxisProperties	      off
+	      XUnits		      "Hertz"
+	      XRange		      "[-Fs/2...Fs/2]"
+	      InheritXIncr	      on
+	      XIncr		      "1.0"
+	      XLabel		      "Samples"
+	      YUnits		      "dB"
+	      YMin		      "-20.2099642477694"
+	      YMax		      "13.0534015069536"
+	      YLabel		      "Magnitude, dB"
+	      LineProperties	      off
+	      LineStyles	      "--"
+	      wintypeSpecScope	      "Hann"
+	      RsSpecScope	      "50"
+	      betaSpecScope	      "5"
+	      winsampSpecScope	      "Periodic"
+	    }
+	    Line {
+	      SrcBlock		      "Rx Signal aligned\nto Chip boundary"
+	      SrcPort		      1
+	      Points		      [60, 0]
+	      Branch {
+		Points			[0, 130]
+		DstBlock		"Discrete-Time\nScatter Plot\nScope"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Discrete-Time\nEye Diagram\nScope"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Rx Signal "
+	      SrcPort		      1
+	      DstBlock		      "Spectrum\nScope"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "State"
+	  SrcPort		  1
+	  Points		  [60, 0]
+	  DstBlock		  "Subsystem"
+	  DstPort		  enable
+	}
+	Line {
+	  SrcBlock		  "Rx Signal Aligned"
+	  SrcPort		  1
+	  DstBlock		  "Subsystem"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Rx Signal"
+	  SrcPort		  1
+	  DstBlock		  "Subsystem"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Display
+      Name		      "PSDU data rate"
+      Ports		      [1]
+      Position		      [840, 477, 930, 503]
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Receiver"
+      Ports		      [1, 2]
+      Position		      [665, 200, 785, 275]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      System {
+	Name			"Receiver"
+	Location		[10, 270, 1008, 561]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Rx Signal"
+	  Position		  [20, 133, 50, 147]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Deframing"
+	  Ports			  [1, 1]
+	  Position		  [840, 102, 925, 178]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  Port {
+	    PortNumber		    1
+	    Name		    "PSDU"
+	    PropagatedSignals	    "PSDU"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	    ShowSigGenPortName	    on
+	  }
+	  System {
+	    Name		    "Deframing"
+	    Location		    [291, 248, 789, 599]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "PPDU"
+	      Position		      [25, 173, 55, 187]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 2]
+	      Position		      [110, 44, 115, 311]
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      Outputs		      "[PLCP_size PSDU_size]"
+	      Port {
+		PortNumber		1
+		Name			"PLCP"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	      Port {
+		PortNumber		2
+		Name			"PSDU"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux1"
+	      Ports		      [1, 2]
+	      Position		      [190, 13, 195, 202]
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      Outputs		      "[PLCP_preamble_size PLCP_header_size]"
+	      Port {
+		PortNumber		1
+		Name			"Preamble"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	      Port {
+		PortNumber		2
+		Name			"Header"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux2"
+	      Ports		      [1, 2]
+	      Position		      [300, 28, 305, 92]
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      Outputs		      "[Sync_size SFD_size]"
+	      Port {
+		PortNumber		1
+		Name			"SYNC"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	      Port {
+		PortNumber		2
+		Name			"SFD"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux3"
+	      Ports		      [1, 4]
+	      Position		      [300, 118, 305, 192]
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      Outputs		      "[Signal_size Service_size Length_size C"
+"RC_size]"
+	      Port {
+		PortNumber		1
+		Name			"SIGNAL"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	      Port {
+		PortNumber		2
+		Name			"SERVICE"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	      Port {
+		PortNumber		3
+		Name			"LENGTH"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	      Port {
+		PortNumber		4
+		Name			"CRC"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator"
+	      Position		      [425, 35, 445, 55]
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator1"
+	      Position		      [425, 65, 445, 85]
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator2"
+	      Position		      [425, 115, 445, 135]
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator3"
+	      Position		      [425, 135, 445, 155]
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator4"
+	      Position		      [425, 155, 445, 175]
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator5"
+	      Position		      [425, 175, 445, 195]
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "PSDU"
+	      Position		      [265, 238, 295, 252]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      Name		      "SYNC"
+	      Labels		      [-1, 1]
+	      SrcBlock		      "Demux2"
+	      SrcPort		      1
+	      DstBlock		      "Terminator"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "SFD"
+	      Labels		      [-1, 1]
+	      SrcBlock		      "Demux2"
+	      SrcPort		      2
+	      DstBlock		      "Terminator1"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "SIGNAL"
+	      Labels		      [-1, 1]
+	      SrcBlock		      "Demux3"
+	      SrcPort		      1
+	      DstBlock		      "Terminator2"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "SERVICE"
+	      Labels		      [-1, 1]
+	      SrcBlock		      "Demux3"
+	      SrcPort		      2
+	      DstBlock		      "Terminator3"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "LENGTH"
+	      Labels		      [-1, 1]
+	      SrcBlock		      "Demux3"
+	      SrcPort		      3
+	      DstBlock		      "Terminator4"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "CRC"
+	      Labels		      [-1, 1]
+	      SrcBlock		      "Demux3"
+	      SrcPort		      4
+	      DstBlock		      "Terminator5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "PPDU"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "Header"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      2
+	      DstBlock		      "Demux3"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "Preamble"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      1
+	      DstBlock		      "Demux2"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "PLCP"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      DstBlock		      "Demux1"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "PSDU"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      DstBlock		      "PSDU"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Demodulate and despread"
+	  Ports			  [1, 1]
+	  Position		  [650, 102, 745, 178]
+	  AttributesFormatString  "%<BlockChoice> "
+	  LinkData {
+	    BlockName		    "11Mbps demod"
+	    DialogParameters {
+	      Short_preamble	      "off"
+	    }
+	    BlockName		    "11Mbps demod/PLCP demod"
+	    DialogParameters {
+	      BlockChoice	      "PLCP demod for long preamble"
+	    }
+	    BlockName		    "1Mbps demod/PLCP demod"
+	    DialogParameters {
+	      BlockChoice	      "PLCP demod for short preamble"
+	    }
+	    BlockName		    "2Mbps demod"
+	    DialogParameters {
+	      Short_preamble	      "off"
+	    }
+	    BlockName		    "2Mbps demod/PLCP demod"
+	    DialogParameters {
+	      BlockChoice	      "PLCP demod for long preamble"
+	    }
+	    BlockName		    "5.5Mbps demod"
+	    DialogParameters {
+	      Short_preamble	      "off"
+	    }
+	    BlockName		    "5.5Mbps demod/PLCP demod"
+	    DialogParameters {
+	      BlockChoice	      "PLCP demod for long preamble"
+	    }
+	  }
+	  BlockChoice		  "11Mbps demod"
+	  TemplateBlock		  "WiFi_lib/Demodulate and despread"
+	  MemberBlocks		  "11Mbps demod,1Mbps demod,2Mbps demod,5.5Mbp"
+"s demod"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  Port {
+	    PortNumber		    1
+	    Name		    "PPDU"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	    ShowSigGenPortName	    on
+	  }
+	  System {
+	    Name		    "Demodulate and despread"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Chips"
+	      Position		      [20, 40, 40, 60]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "11Mbps demod"
+	      Ports		      [1, 1]
+	      Position		      [100, 40, 140, 80]
+	      SourceBlock	      "WiFi_lib/11Mbps demod"
+	      SourceType	      ""
+	      ShowPortLabels	      on
+	      Short_preamble	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "PPDU"
+	      Position		      [200, 40, 220, 60]
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Chips"
+	      SrcPort		      1
+	      DstBlock		      "11Mbps demod"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "11Mbps demod"
+	      SrcPort		      1
+	      DstBlock		      "PPDU"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Move to frame\nboundary\n"
+	  Ports			  [1, 1]
+	  Position		  [525, 122, 595, 158]
+	  SourceBlock		  "dspobslib/Integer Delay"
+	  SourceType		  "Integer Delay"
+	  delay			  "PPDU_size_chips-11"
+	  ic			  "0"
+	  reset_popup		  "None"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Move to symbol\nboundary\n"
+	  Ports			  [1, 1]
+	  Position		  [440, 121, 470, 159]
+	  SourceBlock		  "dspobslib/Integer Delay"
+	  SourceType		  "Integer Delay"
+	  delay			  "Filter_delay_chips_correction"
+	  ic			  "0"
+	  reset_popup		  "None"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Rx Front"
+	  Ports			  [1, 1]
+	  Position		  [145, 110, 220, 170]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "Rx Front"
+	    Location		    [64, 344, 810, 512]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Signal"
+	      Position		      [120, 73, 150, 87]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain"
+	      Position		      [585, 65, 615, 95]
+	      ShowName		      off
+	      Gain		      "1/Samples_per_chips"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Mix from"
+	      Ports		      [1, 1]
+	      Position		      [295, 56, 340, 104]
+	      ShowName		      off
+	      AttributesFormatString  "%<BlockChoice>"
+	      LinkData {
+		BlockName		"Mix from\ncenter frequency/Vector\nSc"
+"ope"
+		DialogParameters {
+		  OpenScopeImmediately	  "off"
+		  LineColors		  "[1 0 0]"
+		  YMin			  "-1.35082863252636"
+		  YMax			  "1.35082863252639"
+		  LineStyles		  "--|--"
+		  FigPos		  "[75 73 830 420]"
+		}
+	      }
+	      ShowPortLabels	      off
+	      BlockChoice	      "No mix from center frequency"
+	      TemplateBlock	      "WiFi_lib/Mix from"
+	      MemberBlocks	      "Mix from center frequency,No mix from c"
+"enter frequency"
+	      TreatAsAtomicUnit	      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      System {
+		Name			"Mix from"
+		Location		[148, 182, 646, 482]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In"
+		  Position		  [20, 40, 40, 60]
+		  Port			  "1"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "No mix from\ncenter frequency"
+		  Ports			  [1, 1]
+		  Position		  [100, 40, 140, 80]
+		  SourceBlock		  "WiFi_lib/No mix from\ncenter freque"
+"ncy"
+		  SourceType		  "SubSystem"
+		  ShowPortLabels	  on
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out"
+		  Position		  [200, 40, 220, 60]
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  "In"
+		  SrcPort		  1
+		  DstBlock		  "No mix from\ncenter frequency"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "No mix from\ncenter frequency"
+		  SrcPort		  1
+		  DstBlock		  "Out"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Rx Pulse Shaping Filter"
+	      Ports		      [1, 1]
+	      Position		      [440, 51, 505, 109]
+	      TreatAsAtomicUnit	      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      MaskType		      "Tx FIR Pulse Shaping Filter"
+	      MaskDescription	      "The pulse shaping filter consits of a R"
+"RC (Root Raised Cosinus) with roll-off factor of 0.22. The length of the FIR "
+"filter is 96 coeffcients. "
+	      MaskPromptString	      "Number of Filter Taps:|RRC Roll-off Fac"
+"tor:|Oversampling Factor:"
+	      MaskStyleString	      "edit,edit,edit"
+	      MaskTunableValueString  "on,on,on"
+	      MaskCallbackString      "||"
+	      MaskEnableString	      "on,on,on"
+	      MaskVisibilityString    "on,on,on"
+	      MaskToolTipString	      "on,on,on"
+	      MaskVarAliasString      ",,"
+	      MaskVariables	      "numTaps=@1;beta=@2;N=@3;"
+	      MaskInitialization      "h=N*firrcos(numTaps,5e6,beta,88e6,'roll"
+"off','sqrt',numTaps/2,kaiser(numTaps+1,1));\nassignin('base','h',h );\n\n"
+	      MaskDisplay	      "plot( 1:prod( size( h)), h);"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "Filter_order|.3|Samples_per_chips"
+	      MaskTabNameString	      ",,"
+	      System {
+		Name			"Rx Pulse Shaping Filter"
+		Location		[463, 223, 875, 455]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "   "
+		  Position		  [40, 48, 70, 62]
+		  Port			  "1"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Direct-Form II\nTranspose Filter"
+		  Ports			  [1, 1]
+		  Position		  [160, 33, 230, 77]
+		  ShowName		  off
+		  SourceBlock		  "dsparch3/Direct-Form II\nTranspose "
+"Filter"
+		  SourceType		  "Direct-Form II Transpose Filter"
+		  num			  "h"
+		  den			  "1"
+		  ic			  "0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  " "
+		  Position		  [310, 48, 340, 62]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "   "
+		  SrcPort		  1
+		  DstBlock		  "Direct-Form II\nTranspose Filter"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Direct-Form II\nTranspose Filter"
+		  SrcPort		  1
+		  DstBlock		  " "
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Filtered"
+	      Position		      [675, 73, 705, 87]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Signal"
+	      SrcPort		      1
+	      DstBlock		      "Mix from"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Mix from"
+	      SrcPort		      1
+	      DstBlock		      "Rx Pulse Shaping Filter"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Rx Pulse Shaping Filter"
+	      SrcPort		      1
+	      DstBlock		      "Gain"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain"
+	      SrcPort		      1
+	      DstBlock		      "Filtered"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      Name		      "This subsystem is configured\nby the sy"
+"stem parameters block"
+	      Position		      [318, 148]
+	      BackgroundColor	      "yellow"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Sync to Chip"
+	  Ports			  [1, 2]
+	  Position		  [265, 102, 360, 178]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "Sync to Chip"
+	    Location		    [288, 282, 792, 536]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Rx Signal"
+	      Position		      [65, 128, 95, 142]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Move to chip\nboundary"
+	      Ports		      [1, 1]
+	      Position		      [175, 116, 205, 154]
+	      SourceBlock	      "dspobslib/Integer Delay"
+	      SourceType	      "Integer Delay"
+	      delay		      "Filter_delay_samples_correction"
+	      ic		      "0"
+	      reset_popup	      "None"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Sample \nChip"
+	      Ports		      [1, 1]
+	      Position		      [285, 118, 320, 152]
+	      SourceBlock	      "dspsigops/Downsample"
+	      SourceType	      "Downsample"
+	      N			      "Samples_per_chips"
+	      phase		      "0"
+	      ic		      "0"
+	      smode		      "Allow multirate"
+	      fmode		      "Maintain input frame size"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Chips"
+	      Position		      [440, 128, 470, 142]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Rx Signal Aligned"
+	      Position		      [440, 183, 470, 197]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Move to chip\nboundary"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      Branch {
+		DstBlock		"Sample \nChip"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 55]
+		DstBlock		"Rx Signal Aligned"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sample \nChip"
+	      SrcPort		      1
+	      DstBlock		      "Chips"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Rx Signal"
+	      SrcPort		      1
+	      DstBlock		      "Move to chip\nboundary"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator6"
+	  Position		  [965, 130, 985, 150]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Rx Bits"
+	  Position		  [880, 58, 910, 72]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Rx Sig Aligned"
+	  Position		  [410, 218, 440, 232]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Sync to Chip"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, 20]
+	  DstBlock		  "Move to symbol\nboundary\n"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Move to symbol\nboundary\n"
+	  SrcPort		  1
+	  DstBlock		  "Move to frame\nboundary\n"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Move to frame\nboundary\n"
+	  SrcPort		  1
+	  DstBlock		  "Demodulate and despread"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Rx Signal"
+	  SrcPort		  1
+	  DstBlock		  "Rx Front"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PSDU"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Deframing"
+	  SrcPort		  1
+	  DstBlock		  "Terminator6"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PPDU"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demodulate and despread"
+	  SrcPort		  1
+	  Points		  [-5, 0; 70, 0]
+	  Branch {
+	    DstBlock		    "Deframing"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -75]
+	    DstBlock		    "Rx Bits"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Rx Front"
+	  SrcPort		  1
+	  DstBlock		  "Sync to Chip"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sync to Chip"
+	  SrcPort		  2
+	  Points		  [15, 0; 0, 65]
+	  DstBlock		  "Rx Sig Aligned"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "This subsystem is configured\nby the system"
+" parameters block"
+	  Position		  [698, 243]
+	  BackgroundColor	  "yellow"
+	}
+      }
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Selector"
+      Ports		      [1, 1]
+      Position		      [655, 475, 690, 505]
+      ShowName		      off
+      Elements		      "[1: PSDU_size]"
+      InputPortWidth	      "PPDU_size"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Subsystem1"
+      Ports		      [1, 1]
+      Position		      [745, 431, 815, 459]
+      ShowName		      off
+      SourceBlock	      "WiFi_lib/Subsystem3"
+      SourceType	      "Display sample rate for framebased signals"
+      ShowPortLabels	      on
+      Units		      "MHz"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Subsystem2"
+      Ports		      [1, 1]
+      Position		      [745, 476, 815, 504]
+      ShowName		      off
+      SourceBlock	      "WiFi_lib/Subsystem3"
+      SourceType	      "Display sample rate for framebased signals"
+      ShowPortLabels	      on
+      Units		      "MHz"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Subsystem3"
+      Ports		      [1, 1]
+      Position		      [745, 386, 815, 414]
+      ShowName		      off
+      SourceBlock	      "WiFi_lib/Subsystem3"
+      SourceType	      "Display sample rate for framebased signals"
+      ShowPortLabels	      on
+      Units		      "MHz"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "System Parameters"
+      Ports		      []
+      Position		      [71, 43, 178, 95]
+      BackgroundColor	      "yellow"
+      ShowName		      off
+      AttributesFormatString  "Rate = %<Mode>\\nPacket Size = %<Packet_size> B"
+"ytes\\nShort Preamble is %<Short_preamble>\\nChannel Number = %<Channel_numbe"
+"r>\\nChannel Type =  %<Channel_type>\\nChannel Noise (EsNo) =  %<EsNo> dB\\n"
+      FontName		      "Arial"
+      FontSize		      11
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskType		      "Set System Parameters"
+      MaskDescription	      "These system parameters set-up configurable sub"
+"systems in the model to implmentedort the requested parameters. Calls wifi_in"
+"it.m to perfom this task as well as calculate delays."
+      MaskPromptString	      "Mode/Data Rate |Packet Size (Bytes)|Use Short P"
+"reamble|Channel Number|Channel Type|Channel EsNo"
+      MaskStyleString	      "popup(1Mbps|2Mbps|5.5Mbps|11Mbps),edit,checkbox"
+",popup(1|2|3|4|5|6|7|8|9|10|11),popup(None|AWGN),edit"
+      MaskTunableValueString  "on,on,on,on,on,on"
+      MaskCallbackString      "||||if strcmp(get_param(gcb,'Channel_type'),'AW"
+"GN')\n	set_param(gcb,'MaskEnables',{'on' 'on' 'on' 'on' 'on' 'on'})\ne"
+"lse\n	set_param(gcb,'MaskEnables',{'on' 'on' 'on' 'on' 'on' 'off'})\ne"
+"nd\n	|"
+      MaskEnableString	      "on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on"
+      MaskVarAliasString      ",,,,,"
+      MaskVariables	      "Mode=@1;Packet_size=@2;Short_preamble=@3;Channe"
+"l_number=@4;Channel_type=&5;EsNo=@6;"
+      MaskInitialization      "WiFi_init\n"
+      MaskDisplay	      "disp('System Parameters')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "11Mbps|1024|off|6|AWGN|EsNo"
+      MaskTabNameString	      ",,,,,"
+      System {
+	Name			"System Parameters"
+	Location		[433, 403, 931, 703]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Transmitter"
+      Ports		      [0, 3]
+      Position		      [75, 201, 190, 279]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      System {
+	Name			"Transmitter"
+	Location		[14, 244, 1013, 576]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "Convert\nbytes bits"
+	  Ports			  [1, 1]
+	  Position		  [165, 136, 180, 174]
+	  SourceBlock		  "commutil2/Integer to Bit\nConverter"
+	  SourceType		  "Integer to Bit Converter"
+	  nbits			  "8"
+	  Port {
+	    PortNumber		    1
+	    Name		    "PSDU"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	    ShowSigGenPortName	    on
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Framing by adding\nPLCP preamble and header"
+	  Ports			  [1, 1]
+	  Position		  [230, 114, 315, 196]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  Port {
+	    PortNumber		    1
+	    Name		    "PPDU"
+	    PropagatedSignals	    "PPDU"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	    ShowSigGenPortName	    on
+	  }
+	  System {
+	    Name		    "Framing by adding\nPLCP preamble and head"
+"er"
+	    Location		    [104, 124, 750, 619]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "PSDU"
+	      Position		      [50, 393, 80, 407]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	      Port {
+		PortNumber		1
+		Name			"PSDU"
+		PropagatedSignals	"PSDU"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "DSP\nConstant1"
+	      Ports		      [0, 1]
+	      Position		      [75, 251, 185, 269]
+	      ShowName		      off
+	      SourceBlock	      "dspsrcs4/DSP\nConstant"
+	      SourceType	      "DSP Constant"
+	      ShowPortLabels	      on
+	      Value		      "randint(Length_size,1)"
+	      SampleMode	      "Discrete"
+	      discreteOutput	      "Frame-based"
+	      continuousOutput	      "Sample-based"
+	      sampTime		      "PPDU_frame_period"
+	      framePeriod	      "PPDU_frame_period"
+	      additionalParams	      off
+	      allowOverrides	      on
+	      dataType		      "Inherit from 'Constant value'"
+	      isSigned		      on
+	      wordLen		      "16"
+	      udDataType	      "sfix(16)"
+	      fracBitsMode	      "Best precision"
+	      numFracBits	      "15"
+	      InterpretAs1D	      "off"
+	      Ts		      "PPDU_frame_period"
+	      FramebasedOutput	      "on"
+	      Port {
+		PortNumber		1
+		Name			"LENGTH"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "DSP\nConstant12"
+	      Ports		      [0, 1]
+	      Position		      [75, 225, 185, 245]
+	      ShowName		      off
+	      SourceBlock	      "dspsrcs4/DSP\nConstant"
+	      SourceType	      "DSP Constant"
+	      ShowPortLabels	      on
+	      Value		      "zeros(Service_size,1)"
+	      SampleMode	      "Discrete"
+	      discreteOutput	      "Frame-based"
+	      continuousOutput	      "Sample-based"
+	      sampTime		      "PPDU_frame_period"
+	      framePeriod	      "PPDU_frame_period"
+	      additionalParams	      off
+	      allowOverrides	      on
+	      dataType		      "Inherit from 'Constant value'"
+	      isSigned		      on
+	      wordLen		      "16"
+	      udDataType	      "sfix(16)"
+	      fracBitsMode	      "Best precision"
+	      numFracBits	      "15"
+	      InterpretAs1D	      "off"
+	      Ts		      "PPDU_frame_period"
+	      FramebasedOutput	      "on"
+	      Port {
+		PortNumber		1
+		Name			"SERVICE"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "DSP\nConstant2"
+	      Ports		      [0, 1]
+	      Position		      [75, 276, 185, 294]
+	      ShowName		      off
+	      SourceBlock	      "dspsrcs4/DSP\nConstant"
+	      SourceType	      "DSP Constant"
+	      ShowPortLabels	      on
+	      Value		      "randint(CRC_size,1)"
+	      SampleMode	      "Discrete"
+	      discreteOutput	      "Frame-based"
+	      continuousOutput	      "Sample-based"
+	      sampTime		      "PPDU_frame_period"
+	      framePeriod	      "PPDU_frame_period"
+	      additionalParams	      off
+	      allowOverrides	      on
+	      dataType		      "Inherit from 'Constant value'"
+	      isSigned		      on
+	      wordLen		      "16"
+	      udDataType	      "sfix(16)"
+	      fracBitsMode	      "Best precision"
+	      numFracBits	      "15"
+	      InterpretAs1D	      "off"
+	      Ts		      "PPDU_frame_period"
+	      FramebasedOutput	      "on"
+	      Port {
+		PortNumber		1
+		Name			"CRC"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "DSP\nConstant3"
+	      Ports		      [0, 1]
+	      Position		      [75, 75, 185, 95]
+	      ShowName		      off
+	      SourceBlock	      "dspsrcs4/DSP\nConstant"
+	      SourceType	      "DSP Constant"
+	      ShowPortLabels	      on
+	      Value		      "Sync_bits %ones(Sync_size,1)"
+	      SampleMode	      "Discrete"
+	      discreteOutput	      "Frame-based"
+	      continuousOutput	      "Sample-based"
+	      sampTime		      "PPDU_frame_period"
+	      framePeriod	      "PPDU_frame_period"
+	      additionalParams	      off
+	      allowOverrides	      on
+	      dataType		      "Inherit from 'Constant value'"
+	      isSigned		      on
+	      wordLen		      "16"
+	      udDataType	      "sfix(16)"
+	      fracBitsMode	      "Best precision"
+	      numFracBits	      "15"
+	      InterpretAs1D	      "off"
+	      Ts		      "PPDU_frame_period"
+	      FramebasedOutput	      "on"
+	      Port {
+		PortNumber		1
+		Name			"SYNC"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "DSP\nConstant4"
+	      Ports		      [0, 1]
+	      Position		      [75, 105, 195, 125]
+	      ShowName		      off
+	      SourceBlock	      "dspsrcs4/DSP\nConstant"
+	      SourceType	      "DSP Constant"
+	      ShowPortLabels	      on
+	      Value		      "de2bi(hex2dec('F3A0'))'"
+	      SampleMode	      "Discrete"
+	      discreteOutput	      "Frame-based"
+	      continuousOutput	      "Sample-based"
+	      sampTime		      "PPDU_frame_period"
+	      framePeriod	      "PPDU_frame_period"
+	      additionalParams	      off
+	      allowOverrides	      on
+	      dataType		      "Inherit from 'Constant value'"
+	      isSigned		      on
+	      wordLen		      "16"
+	      udDataType	      "sfix(16)"
+	      fracBitsMode	      "Best precision"
+	      numFracBits	      "15"
+	      InterpretAs1D	      "off"
+	      Ts		      "PPDU_frame_period"
+	      FramebasedOutput	      "on"
+	      Port {
+		PortNumber		1
+		Name			"SFD"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "DSP\nConstant5"
+	      Ports		      [0, 1]
+	      Position		      [75, 201, 185, 219]
+	      ShowName		      off
+	      SourceBlock	      "dspsrcs4/DSP\nConstant"
+	      SourceType	      "DSP Constant"
+	      ShowPortLabels	      on
+	      Value		      "zeros(Signal_size,1)"
+	      SampleMode	      "Discrete"
+	      discreteOutput	      "Frame-based"
+	      continuousOutput	      "Sample-based"
+	      sampTime		      "PPDU_frame_period"
+	      framePeriod	      "PPDU_frame_period"
+	      additionalParams	      off
+	      allowOverrides	      on
+	      dataType		      "Inherit from 'Constant value'"
+	      isSigned		      on
+	      wordLen		      "16"
+	      udDataType	      "sfix(16)"
+	      fracBitsMode	      "Best precision"
+	      numFracBits	      "15"
+	      InterpretAs1D	      "off"
+	      Ts		      "PPDU_frame_period"
+	      FramebasedOutput	      "on"
+	      Port {
+		PortNumber		1
+		Name			"SIGNAL"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Matrix\nConcatenation1"
+	      Ports		      [3, 1]
+	      Position		      [505, 24, 510, 476]
+	      ShowName		      off
+	      SourceBlock	      "simulink/Math\nOperations/Matrix\nConca"
+"tenation"
+	      SourceType	      "Matrix Concatenation"
+	      numInports	      "3"
+	      catMethod		      "Vertical"
+	      Port {
+		PortNumber		1
+		Name			"PPDU"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Matrix\nConcatenation2"
+	      Ports		      [2, 1]
+	      Position		      [300, 70, 305, 130]
+	      ShowName		      off
+	      SourceBlock	      "simulink/Math\nOperations/Matrix\nConca"
+"tenation"
+	      SourceType	      "Matrix Concatenation"
+	      numInports	      "2"
+	      catMethod		      "Vertical"
+	      Port {
+		PortNumber		1
+		Name			"PLCP Preamble"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Matrix\nConcatenation3"
+	      Ports		      [4, 1]
+	      Position		      [290, 194, 295, 301]
+	      ShowName		      off
+	      SourceBlock	      "simulink/Math\nOperations/Matrix\nConca"
+"tenation"
+	      SourceType	      "Matrix Concatenation"
+	      numInports	      "4"
+	      catMethod		      "Vertical"
+	      Port {
+		PortNumber		1
+		Name			"PLCP Header"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+		ShowSigGenPortName	on
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "PPDU"
+	      Position		      [570, 243, 600, 257]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      Name		      "SYNC"
+	      Labels		      [-1, 1]
+	      SrcBlock		      "DSP\nConstant3"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "SFD"
+	      Labels		      [-1, 1]
+	      SrcBlock		      "DSP\nConstant4"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation2"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "SIGNAL"
+	      Labels		      [-1, 1]
+	      SrcBlock		      "DSP\nConstant5"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation3"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "SERVICE"
+	      Labels		      [-1, 1]
+	      SrcBlock		      "DSP\nConstant12"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation3"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "LENGTH"
+	      Labels		      [-1, 1]
+	      SrcBlock		      "DSP\nConstant1"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation3"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "CRC"
+	      Labels		      [-1, 1]
+	      SrcBlock		      "DSP\nConstant2"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation3"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "PLCP Header"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Matrix\nConcatenation3"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "PPDU"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Matrix\nConcatenation1"
+	      SrcPort		      1
+	      DstBlock		      "PPDU"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "PSDU"
+	      Labels		      [-1, 1]
+	      SrcBlock		      "PSDU"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "PLCP Preamble"
+	      Labels		      [0, 0; -1, 1]
+	      SrcBlock		      "Matrix\nConcatenation2"
+	      SrcPort		      1
+	      DstBlock		      "Matrix\nConcatenation1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Modulate and spread"
+	  Ports			  [1, 1]
+	  Position		  [455, 114, 555, 196]
+	  AttributesFormatString  "%<BlockChoice>"
+	  LinkData {
+	    BlockName		    "11Mbps mod"
+	    DialogParameters {
+	      Short_preamble	      "off"
+	    }
+	    BlockName		    "11Mbps mod/PLCP mod"
+	    DialogParameters {
+	      BlockChoice	      "PLCP mod for long preamble"
+	    }
+	    BlockName		    "1Mbps mod/PLCP mod"
+	    DialogParameters {
+	      BlockChoice	      "PLCP mod for short preamble"
+	    }
+	    BlockName		    "2Mbps mod"
+	    DialogParameters {
+	      Short_preamble	      "off"
+	    }
+	    BlockName		    "2Mbps mod/PLCP mod"
+	    DialogParameters {
+	      BlockChoice	      "PLCP mod for long preamble"
+	    }
+	    BlockName		    "5.5Mbps mod"
+	    DialogParameters {
+	      Short_preamble	      "off"
+	    }
+	    BlockName		    "5.5Mbps mod/PLCP mod"
+	    DialogParameters {
+	      BlockChoice	      "PLCP mod for long preamble"
+	    }
+	  }
+	  BlockChoice		  "11Mbps mod"
+	  TemplateBlock		  "WiFi_lib/Modulate and spread"
+	  MemberBlocks		  "11Mbps mod,1Mbps mod,2Mbps mod,5.5Mbps mod"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Chips"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	    ShowSigGenPortName	    on
+	  }
+	  System {
+	    Name		    "Modulate and spread"
+	    Location		    [148, 182, 646, 482]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "PPDU"
+	      Position		      [20, 40, 40, 60]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "11Mbps mod"
+	      Ports		      [1, 1]
+	      Position		      [100, 40, 140, 80]
+	      SourceBlock	      "WiFi_lib/11Mbps mod"
+	      SourceType	      ""
+	      ShowPortLabels	      on
+	      Short_preamble	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Chips"
+	      Position		      [200, 40, 220, 60]
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "PPDU"
+	      SrcPort		      1
+	      DstBlock		      "11Mbps mod"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "11Mbps mod"
+	      SrcPort		      1
+	      DstBlock		      "Chips"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Source of\nrandom bytes"
+	  Ports			  [0, 1]
+	  Position		  [20, 131, 80, 179]
+	  SourceBlock		  "commrandsrc2/Random Integer\nGenerator"
+	  SourceType		  "Random Integer Generator"
+	  ShowPortLabels	  on
+	  mul			  "255"
+	  seed			  "[12345]"
+	  Ts			  "PPDU_frame_period/Packet_size"
+	  frameBased		  on
+	  sampPerFrame		  "Packet_size"
+	  orient		  off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Packet"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	    ShowSigGenPortName	    on
+	  }
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Tx Power"
+	  Ports			  [1]
+	  Position		  [795, 240, 885, 270]
+	  Orientation		  "down"
+	  Decimation		  "1"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Upsample and\npulse shape"
+	  Ports			  [1, 1]
+	  Position		  [675, 114, 765, 196]
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "Upsample and\npulse shape"
+	    Location		    [104, 226, 819, 505]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Chips"
+	      Position		      [80, 113, 110, 127]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Mix to"
+	      Ports		      [1, 1]
+	      Position		      [440, 97, 515, 143]
+	      ShowName		      off
+	      AttributesFormatString  "%<BlockChoice>"
+	      ShowPortLabels	      off
+	      BlockChoice	      "No mix to center frequency"
+	      TemplateBlock	      "WiFi_lib/Mix to"
+	      MemberBlocks	      "Mix to center frequency,No mix to cente"
+"r frequency"
+	      TreatAsAtomicUnit	      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      System {
+		Name			"Mix to"
+		Location		[148, 182, 646, 482]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In"
+		  Position		  [20, 40, 40, 60]
+		  Port			  "1"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "No mix to center\nfrequency"
+		  Ports			  [1, 1]
+		  Position		  [100, 40, 140, 80]
+		  SourceBlock		  "WiFi_lib/No mix to center\nfrequenc"
+"y"
+		  SourceType		  "SubSystem"
+		  ShowPortLabels	  on
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out"
+		  Position		  [200, 40, 220, 60]
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  "In"
+		  SrcPort		  1
+		  DstBlock		  "No mix to center\nfrequency"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "No mix to center\nfrequency"
+		  SrcPort		  1
+		  DstBlock		  "Out"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Pulse Shaping Filter"
+	      Ports		      [1, 1]
+	      Position		      [230, 93, 315, 147]
+	      TreatAsAtomicUnit	      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      MaskType		      "Tx FIR Pulse Shaping Filter"
+	      MaskDescription	      "The pulse shaping filter consits of a R"
+"RC (Root Raised Cosinus) with roll-off factor of 0.22. The length of the FIR "
+"filter is 96 coeffcients. "
+	      MaskPromptString	      "Number of Filter Taps:|RRC Roll-off Fac"
+"tor:|Oversampling Factor:"
+	      MaskStyleString	      "edit,edit,edit"
+	      MaskTunableValueString  "on,on,on"
+	      MaskCallbackString      "||"
+	      MaskEnableString	      "on,on,on"
+	      MaskVisibilityString    "on,on,on"
+	      MaskToolTipString	      "on,on,on"
+	      MaskVarAliasString      ",,"
+	      MaskVariables	      "numTaps=@1;beta=@2;N=@3;"
+	      MaskInitialization      "h=N*firrcos(numTaps,5e6,beta,88e6,'roll"
+"off','sqrt',numTaps/2,kaiser(numTaps+1,1));\nassignin('base','h',h );\n"
+	      MaskDisplay	      "plot( 1:prod( size( h)), h);"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "Filter_order|.3|Samples_per_chips"
+	      MaskTabNameString	      ",,"
+	      System {
+		Name			"Pulse Shaping Filter"
+		Location		[463, 223, 749, 357]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "   "
+		  Position		  [40, 48, 70, 62]
+		  Port			  "1"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "FIR\nInterpolation"
+		  Ports			  [1, 1]
+		  Position		  [105, 37, 170, 73]
+		  DialogController	  "dspDDGCreate"
+		  DialogControllerArgs	  "DataTag0"
+		  SourceBlock		  "dspmlti4/FIR\nInterpolation"
+		  SourceType		  "FIR Interpolation"
+		  h			  "h"
+		  L			  "N"
+		  framing		  "Maintain input frame size"
+		  outputBufInitCond	  "0"
+		  additionalParams	  off
+		  allowOverrides	  on
+		  firstCoeffMode	  "Same word length as input"
+		  firstCoeffWordLength	  "16"
+		  firstCoeffFracLength	  "15"
+		  outputMode		  "Same as accumulator"
+		  outputWordLength	  "16"
+		  outputFracLength	  "15"
+		  accumMode		  "Inherit via internal rule"
+		  accumWordLength	  "32"
+		  accumFracLength	  "30"
+		  prodOutputMode	  "Inherit via internal rule"
+		  prodOutputWordLength	  "32"
+		  prodOutputFracLength	  "30"
+		  roundingMode		  "Floor"
+		  overflowMode		  off
+		  LockScale		  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  " "
+		  Position		  [190, 48, 220, 62]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "FIR\nInterpolation"
+		  SrcPort		  1
+		  DstBlock		  " "
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "   "
+		  SrcPort		  1
+		  DstBlock		  "FIR\nInterpolation"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Samples"
+	      Position		      [575, 113, 605, 127]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Chips"
+	      SrcPort		      1
+	      DstBlock		      "Pulse Shaping Filter"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Mix to"
+	      SrcPort		      1
+	      DstBlock		      "Samples"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Pulse Shaping Filter"
+	      SrcPort		      1
+	      DstBlock		      "Mix to"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      Name		      "This subsystem is configured\nby the sy"
+"stem parameters block"
+	      Position		      [493, 213]
+	      BackgroundColor	      "yellow"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Variance1"
+	  Ports			  [1, 1]
+	  Position		  [825, 180, 855, 200]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  DialogController	  "dspDDGCreate"
+	  DialogControllerArgs	  "DataTag1"
+	  SourceBlock		  "dspstat3/Variance"
+	  SourceType		  "Variance"
+	  run			  off
+	  reset_popup		  "None"
+	  additionalParams	  off
+	  allowOverrides	  on
+	  outputMode		  "Same as accumulator"
+	  outputWordLength	  "32"
+	  outputFracLength	  "30"
+	  accumMode		  "Same as product output"
+	  accumWordLength	  "32"
+	  accumFracLength	  "30"
+	  prodOutputMode	  "Same as input"
+	  prodOutputWordLength	  "32"
+	  prodOutputFracLength	  "30"
+	  roundingMode		  "Floor"
+	  overflowMode		  off
+	  LockScale		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Tx Bits"
+	  Position		  [445, 73, 475, 87]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Tx Signal"
+	  Position		  [950, 148, 980, 162]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Tx Chips"
+	  Position		  [710, 73, 740, 87]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  Name			  "Packet"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Source of\nrandom bytes"
+	  SrcPort		  1
+	  DstBlock		  "Convert\nbytes bits"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PSDU"
+	  SrcBlock		  "Convert\nbytes bits"
+	  SrcPort		  1
+	  DstBlock		  "Framing by adding\nPLCP preamble and header"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PPDU"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Framing by adding\nPLCP preamble and header"
+	  SrcPort		  1
+	  Points		  [55, 0]
+	  Branch {
+	    Points		    [0, -75]
+	    DstBlock		    "Tx Bits"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Labels		    [1, 0]
+	    DstBlock		    "Modulate and spread"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Upsample and\npulse shape"
+	  SrcPort		  1
+	  Points		  [70, 0]
+	  Branch {
+	    DstBlock		    "Variance1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Tx Signal"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Name			  "Chips"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Modulate and spread"
+	  SrcPort		  1
+	  Points		  [80, 0]
+	  Branch {
+	    DstBlock		    "Upsample and\npulse shape"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -75]
+	    DstBlock		    "Tx Chips"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Variance1"
+	  SrcPort		  1
+	  DstBlock		  "Tx Power"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "This subsystem is configured\nby the system"
+" parameters block"
+	  Position		  [498, 248]
+	  BackgroundColor	  "yellow"
+	}
+	Annotation {
+	  Name			  "Shows Tx power, default is 1W"
+	  Position		  [848, 298]
+	  BackgroundColor	  "yellow"
+	}
+      }
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Upsample/channel rate"
+      Ports		      [1]
+      Position		      [840, 387, 930, 413]
+      Decimation	      "1"
+    }
+    Line {
+      SrcBlock		      "Transmitter"
+      SrcPort		      2
+      DstBlock		      "Channel"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Transmitter"
+      SrcPort		      1
+      DstBlock		      "Goto"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Receiver"
+      SrcPort		      1
+      DstBlock		      "Goto1"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Rx PPDU"
+      Labels		      [-1, 0]
+      SrcBlock		      "From1"
+      SrcPort		      1
+      DstBlock		      "BER meters"
+      DstPort		      2
+    }
+    Line {
+      Name		      "Tx PPDU"
+      Labels		      [-1, 0]
+      SrcBlock		      "From"
+      SrcPort		      1
+      DstBlock		      "BER meters"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Channel"
+      SrcPort		      1
+      Points		      [0, 0; 15, 0]
+      Branch {
+	DstBlock		"Receiver"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 30]
+	DstBlock		"Goto4"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Subsystem3"
+      SrcPort		      1
+      DstBlock		      "Upsample/channel rate"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From2"
+      SrcPort		      1
+      DstBlock		      "Subsystem3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Subsystem1"
+      SrcPort		      1
+      DstBlock		      "Chip rate"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From3"
+      SrcPort		      1
+      DstBlock		      "Subsystem1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From4"
+      SrcPort		      1
+      DstBlock		      "Selector"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Subsystem2"
+      SrcPort		      1
+      DstBlock		      "PSDU data rate"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Selector"
+      SrcPort		      1
+      DstBlock		      "Subsystem2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Receiver"
+      SrcPort		      2
+      DstBlock		      "Goto3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From8"
+      SrcPort		      1
+      DstBlock		      "Instrumentation \n(Remove to speed up\nsimulati"
+"on)"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From5"
+      SrcPort		      1
+      DstBlock		      "Instrumentation \n(Remove to speed up\nsimulati"
+"on)"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Transmitter"
+      SrcPort		      3
+      DstBlock		      "Goto2"
+      DstPort		      1
+    }
+    Annotation {
+      Name		      "  802.11b PHY\n  1Mbps, 2Mbps, 5.5Mbps or 11Mbp"
+"s  "
+      Position		      [462, 67]
+      BackgroundColor	      "lightBlue"
+      FontName		      "Arial"
+      FontSize		      16
+      FontWeight	      "bold"
+    }
+  }
+}
+MatData {
+  NumRecords		  2
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    :     8    (     0         %    "
+"\"     $    !     0         .    .     8    (    !          %    \"     $    "
+"(     0         0    \"    %9A<FEA;F-E"
+  }
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    <     8    (     0         %    "
+"\"     $    !     0         .    0     8    (    !          %    \"     $    "
+",     0         0    #    $9)4D1E8TEN=&5R<      "
+  }
+}
